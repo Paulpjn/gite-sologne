@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gîte des Étangs de Sologne — Location de vacances au cœur de la nature, entre forêts et étangs. Chasse, pêche, vélo, détente." />
+  <title>Gîte des Étangs de Sologne</title>
+
+  <!-- Polices Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Netlify Identity (pour l'admin CMS) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="#" class="nav-logo" aria-label="Accueil">Les Étangs de Sologne</a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#propriete">La Propriété</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#activites">Activités</a>
+      <a href="#localisation">Localisation</a>
+      <a href="#contact" class="btn btn-primary">Réserver</a>
+    </div>
+
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" aria-label="Bienvenue">
+    <div class="hero-bg" role="img" aria-label="Vue sur les étangs de Sologne"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-eyebrow">Sologne &mdash; Loir-et-Cher</span>
+      <h1>Les Étangs<br>de Sologne</h1>
+      <p>Un havre de paix au cœur des forêts et des étangs, pour des vacances ressourçantes au fil de l'eau.</p>
+      <div class="hero-buttons">
+        <a href="#propriete" class="btn btn-outline">Découvrir</a>
+        <a href="#contact" class="btn btn-primary">Réserver votre séjour</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">Défiler</div>
+  </section>
+
+  <!-- Vague hero → propriété -->
+  <div class="wave-separator" style="background:#fff" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C240,60 480,0 720,30 C960,60 1200,0 1440,30 L1440,60 L0,60 Z"
+            fill="#2D4A2D" opacity="0.06"/>
+      <path d="M0,40 C360,10 720,60 1080,30 C1260,15 1380,35 1440,40 L1440,60 L0,60 Z"
+            fill="#2D4A2D" opacity="0.08"/>
+    </svg>
+  </div>
+
+  <!-- ===================== LA PROPRIÉTÉ ===================== -->
+  <section id="propriete" aria-labelledby="titre-propriete">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">Le gîte</p>
+        <h2 id="titre-propriete">Une maison de caractère<br>au bord de l'étang</h2>
+        <p style="max-width:600px;margin:0 auto">Nichée à l'orée d'un bois de chênes centenaires, notre maison solognote vous accueille dans un cadre exceptionnel, loin de l'agitation du quotidien.</p>
+      </div>
+
+      <div class="propriete-grid">
+        <div class="propriete-image fade-in fade-in-delay-1">
+          <img src="https://picsum.photos/seed/maison-sologne/800/600"
+               alt="La maison du gîte vue de l'extérieur" loading="lazy" />
+        </div>
+
+        <div class="fade-in fade-in-delay-2">
+          <p>Construite en 1887 et entièrement rénovée, la maison a conservé son âme d'antan : cheminée en pierre, tomettes au sol, poutres apparentes. Elle offre tout le confort moderne pour un séjour inoubliable.</p>
+          <p>L'étang privé de 2 hectares s'étend juste devant la terrasse. Canoë, barque de pêche et pontons sont à votre disposition pour profiter pleinement du cadre naturel exceptionnel.</p>
+
+          <div class="propriete-stats">
+            <div class="stat-item">
+              <span class="stat-num">10</span>
+              <span class="stat-label">Personnes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">4</span>
+              <span class="stat-label">Chambres</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">180</span>
+              <span class="stat-label">m²</span>
+            </div>
+          </div>
+
+          <h3>Équipements</h3>
+          <ul class="equipements-list">
+            <li>Cuisine équipée</li>
+            <li>Lave-vaisselle</li>
+            <li>Cheminée à bois</li>
+            <li>Poêle à bois</li>
+            <li>Wi-Fi haut débit</li>
+            <li>Télévision 65"</li>
+            <li>Lave-linge / sèche-linge</li>
+            <li>Terrasse panoramique</li>
+            <li>Barbecue</li>
+            <li>Barque de pêche</li>
+            <li>Canoë (2 places)</li>
+            <li>Vélos (4 adultes, 2 enfants)</li>
+            <li>Parking privé fermé</li>
+            <li>Jardin 5 000 m²</li>
+            <li>Espace jeux enfants</li>
+            <li>Animaux acceptés</li>
+          </ul>
+
+          <div class="mt-2">
+            <a href="#contact" class="btn btn-dark" data-scroll-to="#contact">
+              Vérifier les disponibilités →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vague propriété → galerie -->
+  <div class="wave-separator" style="background:#F5F0E8" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C180,50 420,0 720,25 C1020,50 1260,10 1440,30 L1440,60 L0,60 Z"
+            fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- ===================== GALERIE ===================== -->
+  <section id="galerie" aria-labelledby="titre-galerie">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">Photos</p>
+        <h2 id="titre-galerie">Galerie</h2>
+        <p>Cliquez sur une photo pour l'agrandir</p>
+      </div>
+
+      <div class="galerie-grid" role="list">
+        <div class="galerie-item fade-in" role="listitem"
+             data-full="https://picsum.photos/seed/sologne1/1200/800"
+             data-caption="Vue sur l'étang au lever du soleil">
+          <img src="https://picsum.photos/seed/sologne1/600/400" alt="Vue sur l'étang au lever du soleil" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+
+        <div class="galerie-item fade-in fade-in-delay-1" role="listitem"
+             data-full="https://picsum.photos/seed/sologne2/1200/800"
+             data-caption="Le salon avec cheminée">
+          <img src="https://picsum.photos/seed/sologne2/600/400" alt="Le salon avec cheminée" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+
+        <div class="galerie-item fade-in fade-in-delay-2" role="listitem"
+             data-full="https://picsum.photos/seed/sologne3/1200/800"
+             data-caption="La cuisine équipée">
+          <img src="https://picsum.photos/seed/sologne3/600/400" alt="La cuisine équipée" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+
+        <div class="galerie-item fade-in fade-in-delay-3" role="listitem"
+             data-full="https://picsum.photos/seed/sologne4/1200/800"
+             data-caption="Chambre principale avec vue sur l'étang">
+          <img src="https://picsum.photos/seed/sologne4/600/400" alt="Chambre principale" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+
+        <div class="galerie-item fade-in" role="listitem"
+             data-full="https://picsum.photos/seed/sologne5/1200/800"
+             data-caption="La terrasse en bois face à l'étang">
+          <img src="https://picsum.photos/seed/sologne5/600/400" alt="La terrasse en bois" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+
+        <div class="galerie-item fade-in fade-in-delay-1" role="listitem"
+             data-full="https://picsum.photos/seed/sologne6/1200/800"
+             data-caption="La forêt à deux pas du gîte">
+          <img src="https://picsum.photos/seed/sologne6/600/400" alt="La forêt de Sologne" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+
+        <div class="galerie-item fade-in fade-in-delay-2" role="listitem"
+             data-full="https://picsum.photos/seed/sologne7/1200/800"
+             data-caption="La barque sur l'étang privé">
+          <img src="https://picsum.photos/seed/sologne7/600/400" alt="Barque sur l'étang" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+
+        <div class="galerie-item fade-in fade-in-delay-3" role="listitem"
+             data-full="https://picsum.photos/seed/sologne8/1200/800"
+             data-caption="Coucher de soleil sur les étangs">
+          <img src="https://picsum.photos/seed/sologne8/600/400" alt="Coucher de soleil sur les étangs" loading="lazy" />
+          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Galerie agrandie">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Fermer">&times;</button>
+    <button class="lightbox-nav" id="lightbox-prev" aria-label="Image précédente">&#8249;</button>
+    <img id="lightbox-img" src="" alt="" />
+    <button class="lightbox-nav" id="lightbox-next" aria-label="Image suivante">&#8250;</button>
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <!-- Vague galerie → tarifs -->
+  <div class="wave-separator" style="background:#2D4A2D" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,10 C360,55 720,0 1080,35 C1260,52 1380,20 1440,15 L1440,60 L0,60 Z"
+            fill="#F5F0E8"/>
+    </svg>
+  </div>
+
+  <!-- ===================== TARIFS ===================== -->
+  <section id="tarifs" aria-labelledby="titre-tarifs">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">Tarifs & Disponibilités</p>
+        <h2 id="titre-tarifs">Nos tarifs</h2>
+        <p>Tarifs indicatifs pour le gîte entier (10 personnes maximum)</p>
+      </div>
+
+      <div class="tarifs-layout">
+        <!-- Tableau des tarifs -->
+        <div class="fade-in">
+          <div class="tarifs-table-wrap">
+            <table class="tarifs-table" aria-label="Tableau des tarifs par saison">
+              <thead>
+                <tr>
+                  <th>Saison</th>
+                  <th>Période</th>
+                  <th>Nuit</th>
+                  <th>Semaine</th>
+                  <th>Séjour min.</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="saison-badge saison-haute">Haute</span>
+                  </td>
+                  <td>Juil.&ndash;Août &amp; fêtes</td>
+                  <td class="prix-highlight">350 €</td>
+                  <td class="prix-highlight">2 100 €</td>
+                  <td>7 nuits</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="saison-badge saison-medium">Moyenne</span>
+                  </td>
+                  <td>Avr.&ndash;Juin / Sept.&ndash;Oct.</td>
+                  <td class="prix-highlight">260 €</td>
+                  <td class="prix-highlight">1 560 €</td>
+                  <td>2 nuits</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="saison-badge saison-basse">Basse</span>
+                  </td>
+                  <td>Nov.&ndash;Mars</td>
+                  <td class="prix-highlight">200 €</td>
+                  <td class="prix-highlight">1 100 €</td>
+                  <td>2 nuits</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Calendrier -->
+          <div id="calendrier" style="margin-top:2rem" aria-label="Calendrier de disponibilités"></div>
+        </div>
+
+        <!-- Infos pratiques -->
+        <div class="tarifs-infos fade-in fade-in-delay-2">
+          <div class="info-card">
+            <h4>Caution</h4>
+            <p>800 € par chèque ou virement, restituée sous 7 jours après l'état des lieux de sortie.</p>
+          </div>
+          <div class="info-card">
+            <h4>Taxe de séjour</h4>
+            <p>0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur.</p>
+          </div>
+          <div class="info-card">
+            <h4>Ménage de fin de séjour</h4>
+            <p>Inclus dans les tarifs. Un état des lieux d'entrée et de sortie est réalisé en présence des locataires.</p>
+          </div>
+          <div class="info-card">
+            <h4>Draps &amp; linge</h4>
+            <p>Draps et serviettes fournis pour toutes les chambres. Linge de table disponible sur demande.</p>
+          </div>
+          <div class="info-card">
+            <h4>Animaux de compagnie</h4>
+            <p>Acceptés (chiens de chasse bienvenus) avec supplément de 30 €/séjour.</p>
+          </div>
+          <div class="info-card">
+            <h4>Acompte</h4>
+            <p>30 % à la réservation, solde 30 jours avant l'arrivée. Annulation gratuite jusqu'à 60 jours avant le séjour.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tarifs-cta fade-in">
+        <a href="#contact" class="btn btn-primary" style="font-size:1.05rem;padding:1em 2.5em"
+           data-scroll-to="#contact">
+          Demander une réservation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vague tarifs → activités -->
+  <div class="wave-separator" style="background:#fff" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,10 720,55 1080,25 C1260,10 1380,45 1440,40 L1440,60 L0,60 Z"
+            fill="#2D4A2D"/>
+    </svg>
+  </div>
+
+  <!-- ===================== ACTIVITÉS ===================== -->
+  <section id="activites" aria-labelledby="titre-activites">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">À faire autour du gîte</p>
+        <h2 id="titre-activites">Activités &amp; Environnement</h2>
+        <p style="max-width:600px;margin:0 auto">La Sologne est un paradis naturel de 500 000 hectares. Découvrez ses richesses au fil de vos séjours.</p>
+      </div>
+
+      <div class="activites-grid">
+
+        <article class="activite-card fade-in">
+          <div class="activite-img">
+            <img src="https://picsum.photos/seed/peche-sologne/600/340" alt="Pêche sur l'étang" loading="lazy" />
+          </div>
+          <div class="activite-body">
+            <span class="activite-icon">🎣</span>
+            <h3>Pêche à l'étang</h3>
+            <p>L'étang privé de 2 hectares est poissonneux (carpe, brochet, perche). Barque fournie. Carte de pêche disponible auprès des propriétaires.</p>
+          </div>
+        </article>
+
+        <article class="activite-card fade-in fade-in-delay-1">
+          <div class="activite-img">
+            <img src="https://picsum.photos/seed/chasse-sologne/600/340" alt="Chasse en Sologne" loading="lazy" />
+          </div>
+          <div class="activite-body">
+            <span class="activite-icon">🦌</span>
+            <h3>Chasse</h3>
+            <p>La Sologne est réputée pour sa chasse. Plans de chasse au cerf, chevreuil et sanglier disponibles sur réservation. Chenil aménagé sur la propriété.</p>
+          </div>
+        </article>
+
+        <article class="activite-card fade-in fade-in-delay-2">
+          <div class="activite-img">
+            <img src="https://picsum.photos/seed/velo-forêt/600/340" alt="Randonnée vélo en forêt" loading="lazy" />
+          </div>
+          <div class="activite-body">
+            <span class="activite-icon">🚴</span>
+            <h3>Vélo &amp; Randonnée</h3>
+            <p>Plus de 200 km de pistes cyclables balisées. 6 vélos mis à disposition. Circuits au départ du gîte traversant forêts, villages et étangs.</p>
+          </div>
+        </article>
+
+        <article class="activite-card fade-in">
+          <div class="activite-img">
+            <img src="https://picsum.photos/seed/canoe-lac/600/340" alt="Canoë sur l'étang" loading="lazy" />
+          </div>
+          <div class="activite-body">
+            <span class="activite-icon">🛶</span>
+            <h3>Canoë &amp; Kayak</h3>
+            <p>Un canoë biplace est disponible sur l'étang privé. Des sorties kayak sont organisables sur la Sauldre à 8 km du gîte.</p>
+          </div>
+        </article>
+
+        <article class="activite-card fade-in fade-in-delay-1">
+          <div class="activite-img">
+            <img src="https://picsum.photos/seed/champignons-foret/600/340" alt="Cueillette en forêt" loading="lazy" />
+          </div>
+          <div class="activite-body">
+            <span class="activite-icon">🍄</span>
+            <h3>Nature &amp; Cueillette</h3>
+            <p>En automne, la forêt de Sologne regorge de cèpes, girolles et trompettes de la mort. Observation de la faune sauvage à l'aube depuis les affûts.</p>
+          </div>
+        </article>
+
+        <article class="activite-card fade-in fade-in-delay-2">
+          <div class="activite-img">
+            <img src="https://picsum.photos/seed/chateau-loire/600/340" alt="Châteaux de la Loire" loading="lazy" />
+          </div>
+          <div class="activite-body">
+            <span class="activite-icon">🏰</span>
+            <h3>Châteaux &amp; Patrimoine</h3>
+            <p>Chambord (25 km), Cheverny (30 km), Blois (35 km). La Vallée des Rois est à portée pour une excursion culturelle d'une journée.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Vague activités → propriétaires -->
+  <div class="wave-separator" style="background:#F5F0E8" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z"
+            fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- ===================== PROPRIÉTAIRES ===================== -->
+  <section id="proprietaires" aria-labelledby="titre-proprietaires">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">Vos hôtes</p>
+        <h2 id="titre-proprietaires">Les Propriétaires</h2>
+      </div>
+
+      <div class="proprio-layout">
+        <div class="proprio-photo-wrap fade-in">
+          <div class="proprio-photo">
+            <img src="https://picsum.photos/seed/proprio-couple/440/440"
+                 alt="François et Isabelle Marchais, propriétaires du gîte" loading="lazy" />
+          </div>
+          <blockquote class="proprio-citation">
+            « La Sologne, c'est une façon de vivre plus lente, plus vraie. Nous avons hâte de vous la faire découvrir. »
+          </blockquote>
+        </div>
+
+        <div class="fade-in fade-in-delay-2">
+          <h3>François &amp; Isabelle Marchais</h3>
+          <p>Originaires du Berry, nous avons découvert cette maison lors d'une randonnée à vélo il y a quinze ans. Coup de cœur immédiat pour la lumière sur l'étang, le silence de la forêt et l'odeur des sous-bois à l'automne.</p>
+          <p>Après une longue restauration dans le respect de l'architecture solognote, nous avons choisi d'ouvrir notre demeure aux voyageurs qui, comme nous, cherchent à renouer avec la nature sans sacrifier le confort.</p>
+          <p>Chasseur passionné depuis l'enfance, François connaît chaque sente du domaine. Isabelle, ancienne chef de rang, a mis tout son soin dans la décoration intérieure et sera ravie de vous recommander les meilleurs producteurs locaux et les marchés à ne pas manquer.</p>
+          <p><strong>Nous sommes disponibles pour répondre à toutes vos questions et personnaliser votre séjour.</strong> N'hésitez pas à nous contacter, même pour un renseignement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vague propriétaires → localisation -->
+  <div class="wave-separator" style="background:#fff" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,15 C240,50 600,5 900,35 C1100,55 1300,20 1440,25 L1440,60 L0,60 Z"
+            fill="#F5F0E8"/>
+    </svg>
+  </div>
+
+  <!-- ===================== LOCALISATION ===================== -->
+  <section id="localisation" aria-labelledby="titre-localisation">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">Comment nous trouver</p>
+        <h2 id="titre-localisation">Localisation</h2>
+        <p>Au cœur de la Sologne, commune de Souvigny-en-Sologne (Loir-et-Cher, 41)</p>
+      </div>
+
+      <div class="carte-wrap fade-in">
+        <!-- OpenStreetMap centré sur la Sologne (Souvigny-en-Sologne) -->
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=1.9668%2C47.4850%2C2.1868%2C47.6050&layer=mapnik&marker=47.5450%2C2.0768"
+          title="Carte de localisation du gîte — Souvigny-en-Sologne"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="localisation-infos fade-in">
+        <div class="loc-info">
+          <span class="loc-icon" aria-hidden="true">📍</span>
+          <div>
+            <strong>Adresse</strong>
+            <span>Les Étangs de Sologne<br>Route de l'Étang Neuf<br>41600 Souvigny-en-Sologne</span>
+          </div>
+        </div>
+        <div class="loc-info">
+          <span class="loc-icon" aria-hidden="true">🚗</span>
+          <div>
+            <strong>En voiture</strong>
+            <span>Paris A71 &rarr; sortie Lamotte-Beuvron (1h45)<br>Tours : 1h00 &bull; Orléans : 45 min</span>
+          </div>
+        </div>
+        <div class="loc-info">
+          <span class="loc-icon" aria-hidden="true">🚆</span>
+          <div>
+            <strong>En train</strong>
+            <span>Gare de Lamotte-Beuvron (TER depuis Paris-Austerlitz, 1h30) &bull; Navette possible sur demande</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vague localisation → contact -->
+  <div class="wave-separator" style="background:#2D4A2D" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,45 C300,10 700,55 1100,20 C1280,7 1390,40 1440,45 L1440,60 L0,60 Z"
+            fill="#ffffff"/>
+    </svg>
+  </div>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" aria-labelledby="titre-contact">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">Nous contacter</p>
+        <h2 id="titre-contact">Réservation &amp; Informations</h2>
+        <p>Nous répondons sous 24 h en moyenne. Pour une réponse rapide, n'hésitez pas à nous appeler directement.</p>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Informations de contact -->
+        <div class="contact-infos fade-in">
+          <div class="contact-item">
+            <span class="contact-item-icon" aria-hidden="true">📞</span>
+            <div>
+              <strong>Téléphone</strong>
+              <a href="tel:+33612345678">+33 6 12 34 56 78</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon" aria-hidden="true">✉️</span>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:contact@etangs-sologne.fr">contact@etangs-sologne.fr</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon" aria-hidden="true">🕐</span>
+            <div>
+              <strong>Disponibilité</strong>
+              <span>Lundi&ndash;Samedi, 9h&ndash;20h<br>Réponse garantie sous 24h</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-item-icon" aria-hidden="true">📅</span>
+            <div>
+              <strong>Arrivée / Départ</strong>
+              <span>Arrivée à partir de 17h<br>Départ avant 11h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class="contact-form fade-in fade-in-delay-2">
+          <!-- Formulaire Netlify Forms -->
+          <form
+            id="contact-form"
+            name="contact-gite"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            novalidate
+          >
+            <input type="hidden" name="form-name" value="contact-gite" />
+            <!-- Champ honeypot anti-spam -->
+            <p style="display:none">
+              <label>Ne pas remplir : <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="prenom">Prénom *</label>
+                <input type="text" id="prenom" name="prenom"
+                       placeholder="Marie" autocomplete="given-name" required />
+              </div>
+              <div class="form-group">
+                <label for="nom">Nom *</label>
+                <input type="text" id="nom" name="nom"
+                       placeholder="Dupont" autocomplete="family-name" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email"
+                     placeholder="marie.dupont@email.fr" autocomplete="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone"
+                     placeholder="06 XX XX XX XX" autocomplete="tel" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date-arrivee">Date d'arrivée souhaitée *</label>
+                <input type="date" id="date-arrivee" name="date_arrivee" required />
+              </div>
+              <div class="form-group">
+                <label for="date-depart">Date de départ souhaitée *</label>
+                <input type="date" id="date-depart" name="date_depart" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="nb-personnes">Nombre de personnes *</label>
+              <select id="nb-personnes" name="nb_personnes" required>
+                <option value="">Choisir...</option>
+                <option value="1-2">1 à 2 personnes</option>
+                <option value="3-4">3 à 4 personnes</option>
+                <option value="5-6">5 à 6 personnes</option>
+                <option value="7-8">7 à 8 personnes</option>
+                <option value="9-10">9 à 10 personnes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message"
+                        placeholder="Dites-nous en plus sur votre projet de séjour, vos besoins particuliers, vos questions…"></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary">
+                Envoyer ma demande &rarr;
+              </button>
+            </div>
+          </form>
+
+          <div class="form-success" id="form-success" role="alert">
+            <p style="font-size:2.5rem;margin-bottom:0.5rem">🌿</p>
+            <p>Votre message a bien été envoyé !</p>
+            <p style="font-size:0.9rem;opacity:0.7;font-family:Lato,sans-serif;font-style:normal">
+              Nous vous répondrons dans les plus brefs délais.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Les Étangs de Sologne</div>
+      <div class="footer-links">
+        <a href="#propriete">La Propriété</a>
+        <a href="#galerie">Galerie</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#activites">Activités</a>
+        <a href="#contact">Contact</a>
+        <a href="/admin/">Administration</a>
+      </div>
+      <p style="margin:0;font-size:0.8rem">
+        &copy; 2026 Les Étangs de Sologne &mdash;
+        Route de l'Étang Neuf, 41600 Souvigny-en-Sologne &mdash;
+        <a href="mailto:contact@etangs-sologne.fr">contact@etangs-sologne.fr</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+
+  <!-- Redirect Netlify Identity vers l'admin -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

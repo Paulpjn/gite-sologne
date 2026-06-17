@@ -1,0 +1,74 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: fr
+
+collections:
+  - name: "parametres"
+    label: "Paramètres du site"
+    files:
+      - name: "general"
+        label: "Informations générales"
+        file: "_data/general.json"
+        fields:
+          - { label: "Nom du gîte", name: "nom_gite", widget: "string" }
+          - { label: "Slogan", name: "slogan", widget: "string" }
+          - { label: "Description courte (hero)", name: "description_hero", widget: "text" }
+          - { label: "Email de contact", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "Adresse", name: "adresse", widget: "text" }
+
+      - name: "propriete"
+        label: "La Propriété"
+        file: "_data/propriete.json"
+        fields:
+          - { label: "Titre de section", name: "titre", widget: "string" }
+          - { label: "Description", name: "description", widget: "markdown" }
+          - { label: "Capacité (personnes)", name: "capacite", widget: "number" }
+          - { label: "Nombre de chambres", name: "chambres", widget: "number" }
+          - { label: "Surface (m²)", name: "surface", widget: "number" }
+          - label: "Équipements"
+            name: "equipements"
+            widget: "list"
+            field: { label: "Équipement", name: "item", widget: "string" }
+          - { label: "Photo principale", name: "photo", widget: "image", required: false }
+
+      - name: "tarifs"
+        label: "Tarifs & Disponibilités"
+        file: "_data/tarifs.json"
+        fields:
+          - label: "Saisons et tarifs"
+            name: "saisons"
+            widget: "list"
+            fields:
+              - { label: "Nom de la saison", name: "nom", widget: "string" }
+              - { label: "Période", name: "periode", widget: "string" }
+              - { label: "Prix par nuit (€)", name: "prix_nuit", widget: "number" }
+              - { label: "Prix par semaine (€)", name: "prix_semaine", widget: "number" }
+              - { label: "Séjour minimum (nuits)", name: "sejour_min", widget: "number" }
+          - { label: "Caution (€)", name: "caution", widget: "number" }
+          - { label: "Taxe de séjour (€/pers/nuit)", name: "taxe_sejour", widget: "number" }
+          - { label: "Informations supplémentaires", name: "infos", widget: "text", required: false }
+
+      - name: "proprietaires"
+        label: "Les Propriétaires"
+        file: "_data/proprietaires.json"
+        fields:
+          - { label: "Prénom & Nom", name: "nom", widget: "string" }
+          - { label: "Texte de présentation", name: "texte", widget: "markdown" }
+          - { label: "Photo", name: "photo", widget: "image", required: false }
+          - { label: "Citation personnelle", name: "citation", widget: "text", required: false }
+
+  - name: "galerie"
+    label: "Galerie Photos"
+    folder: "_data/galerie"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre / Légende", name: "titre", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Ordre d'affichage", name: "ordre", widget: "number", default: 1 }
