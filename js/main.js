@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
     });
 
-    // Ferme le menu au clic sur un lien
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         burger.classList.remove('active');
@@ -39,8 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ---- FADE-IN AU SCROLL ---- */
-  const fadeEls = document.querySelectorAll('.fade-in');
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -50,17 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
-  fadeEls.forEach(el => observer.observe(el));
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
   /* ---- LIGHTBOX GALERIE ---- */
-  const lightbox     = document.getElementById('lightbox');
-  const lbImg        = document.getElementById('lightbox-img');
-  const lbCaption    = document.getElementById('lightbox-caption');
-  const lbClose      = document.getElementById('lightbox-close');
-  const lbPrev       = document.getElementById('lightbox-prev');
-  const lbNext       = document.getElementById('lightbox-next');
+  const lightbox  = document.getElementById('lightbox');
+  const lbImg     = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbClose   = document.getElementById('lightbox-close');
+  const lbPrev    = document.getElementById('lightbox-prev');
+  const lbNext    = document.getElementById('lightbox-next');
 
-  const galerieItems = [...document.querySelectorAll('.galerie-item')];
+  let galerieItems = [];
   let currentIndex = 0;
 
   const openLightbox = (index) => {
@@ -81,13 +78,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const showPrev = () => openLightbox((currentIndex - 1 + galerieItems.length) % galerieItems.length);
   const showNext = () => openLightbox((currentIndex + 1) % galerieItems.length);
 
-  galerieItems.forEach((item, idx) => {
-    item.addEventListener('click', () => openLightbox(idx));
-  });
+  const initLightbox = () => {
+    galerieItems = [...document.querySelectorAll('.galerie-item')];
+    galerieItems.forEach((item, idx) => {
+      item.addEventListener('click', () => openLightbox(idx));
+    });
+  };
 
-  if (lbClose)  lbClose.addEventListener('click', closeLightbox);
-  if (lbPrev)   lbPrev.addEventListener('click', showPrev);
-  if (lbNext)   lbNext.addEventListener('click', showNext);
+  if (lbClose) lbClose.addEventListener('click', closeLightbox);
+  if (lbPrev)  lbPrev.addEventListener('click', showPrev);
+  if (lbNext)  lbNext.addEventListener('click', showNext);
 
   if (lightbox) {
     lightbox.addEventListener('click', (e) => {
@@ -97,10 +97,178 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('keydown', (e) => {
     if (!lightbox?.classList.contains('active')) return;
-    if (e.key === 'Escape')      closeLightbox();
-    if (e.key === 'ArrowLeft')   showPrev();
-    if (e.key === 'ArrowRight')  showNext();
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  showPrev();
+    if (e.key === 'ArrowRight') showNext();
   });
+
+  /* ---- CHARGEMENT DONNÉES CMS ---- */
+  loadCMSData();
+
+  async function loadCMSData() {
+    try {
+      const [general, propriete, tarifs, proprietaires, galerie] = await Promise.all([
+        fetch('_data/general.json').then(r => r.json()),
+        fetch('_data/propriete.json').then(r => r.json()),
+        fetch('_data/tarifs.json').then(r => r.json()),
+        fetch('_data/proprietaires.json').then(r => r.json()),
+        fetch('_data/galerie.json').then(r => r.json()).catch(() => ({ photos: [] })),
+      ]);
+
+      applyGeneral(general);
+      applyPropriete(propriete);
+      applyTarifs(tarifs);
+      applyProprietaires(proprietaires);
+      applyGalerie(galerie);
+
+      initLightbox();
+      document.querySelectorAll('#cms-galerie .fade-in').forEach(el => observer.observe(el));
+    } catch (e) {
+      console.warn('Données CMS non chargées :', e);
+      initLightbox();
+    }
+  }
+
+  /* ---- HELPERS ---- */
+  const el = (id) => document.getElementById(id);
+
+  const setText = (id, val) => {
+    const node = el(id);
+    if (node && val !== undefined && val !== null) node.textContent = val;
+  };
+
+  const setHTML = (id, html) => {
+    const node = el(id);
+    if (node && html) node.innerHTML = html;
+  };
+
+  const setHref = (id, href) => {
+    const node = el(id);
+    if (node) node.href = href;
+  };
+
+  const setSrc = (id, src) => {
+    const node = el(id);
+    if (node && src) node.src = src;
+  };
+
+  const md2html = (str) =>
+    (str || '').split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
+
+  /* ---- FONCTIONS D'APPLICATION ---- */
+
+  function applyGeneral(d) {
+    if (!d) return;
+
+    [el('cms-nom-gite'), el('cms-footer-nom')].forEach(node => {
+      if (node) node.textContent = d.nom_gite;
+    });
+
+    setText('cms-hero-slogan', d.description_hero || d.slogan);
+
+    if (d.telephone) {
+      const tel = el('cms-contact-tel');
+      if (tel) {
+        tel.textContent = d.telephone;
+        tel.href = 'tel:' + d.telephone.replace(/\s/g, '');
+      }
+    }
+
+    if (d.email) {
+      [el('cms-contact-email'), el('cms-footer-email')].forEach(node => {
+        if (node) {
+          node.textContent = d.email;
+          node.href = 'mailto:' + d.email;
+        }
+      });
+    }
+
+    if (d.adresse) {
+      setHTML('cms-loc-adresse', d.adresse.replace(/\n/g, '<br>'));
+    }
+
+    document.title = d.nom_gite || document.title;
+  }
+
+  function applyPropriete(d) {
+    if (!d) return;
+
+    if (d.description) setHTML('cms-propriete-desc', md2html(d.description));
+    setText('cms-capacite', d.capacite);
+    setText('cms-chambres', d.chambres);
+    setText('cms-surface', d.surface);
+    if (d.photo) setSrc('cms-propriete-img', d.photo);
+
+    const ul = el('cms-equipements');
+    if (ul && Array.isArray(d.equipements) && d.equipements.length) {
+      ul.innerHTML = d.equipements
+        .map(e => `<li>${e.item || e}</li>`)
+        .join('');
+    }
+  }
+
+  function applyTarifs(d) {
+    if (!d) return;
+
+    const tbody = el('cms-tarifs-tbody');
+    if (tbody && Array.isArray(d.saisons) && d.saisons.length) {
+      const badgeClasses = ['saison-basse', 'saison-medium', 'saison-haute'];
+      tbody.innerHTML = d.saisons.map((s, i) => {
+        const badge = badgeClasses[i] || 'saison-basse';
+        const nuits = s.sejour_min > 1 ? `${s.sejour_min} nuits` : '1 nuit';
+        return `<tr>
+          <td><span class="saison-badge ${badge}">${s.nom}</span></td>
+          <td>${s.periode}</td>
+          <td class="prix-highlight">${s.prix_nuit} €</td>
+          <td class="prix-highlight">${s.prix_semaine ? s.prix_semaine + ' €' : '—'}</td>
+          <td>${nuits}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    if (d.caution) {
+      const cautionEl = el('cms-caution');
+      if (cautionEl) {
+        cautionEl.textContent =
+          `${d.caution} € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie.`;
+      }
+    }
+
+    if (d.taxe_sejour) {
+      const taxeEl = el('cms-taxe');
+      if (taxeEl) {
+        taxeEl.textContent =
+          `${String(d.taxe_sejour).replace('.', ',')} € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur.`;
+      }
+    }
+  }
+
+  function applyProprietaires(d) {
+    if (!d) return;
+
+    setText('cms-proprio-nom', d.nom);
+    if (d.texte) setHTML('cms-proprio-texte', md2html(d.texte));
+    if (d.photo) setSrc('cms-proprio-photo', d.photo);
+    if (d.citation) setText('cms-proprio-citation', d.citation);
+  }
+
+  function applyGalerie(d) {
+    const grid = el('cms-galerie');
+    if (!grid || !d || !Array.isArray(d.photos) || !d.photos.length) return;
+
+    const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2', 'fade-in-delay-3'];
+    const sorted = [...d.photos].sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
+
+    grid.innerHTML = sorted.map((photo, i) => {
+      const delay = delays[i % delays.length];
+      return `<div class="galerie-item fade-in ${delay}" role="listitem"
+                   data-full="${photo.photo}"
+                   data-caption="${photo.titre || ''}">
+        <img src="${photo.photo}" alt="${photo.titre || ''}" loading="lazy" />
+        <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
+      </div>`;
+    }).join('');
+  }
 
   /* ---- MINI CALENDRIER DISPONIBILITÉS ---- */
   const calWrap = document.getElementById('calendrier');
@@ -114,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
       months.push(d);
     }
 
-    // Dates fictives indisponibles (format YYYY-MM-DD)
     const indisponibles = [
       '2026-07-04','2026-07-05','2026-07-06','2026-07-07',
       '2026-07-08','2026-07-09','2026-07-10','2026-07-11',
@@ -136,8 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
     months.forEach(date => {
       const year  = date.getFullYear();
       const month = date.getMonth();
-      const firstDay = new Date(year, month, 1).getDay(); // 0=dim
-      const offset = (firstDay + 6) % 7; // lundi en premier
+      const firstDay = new Date(year, month, 1).getDay();
+      const offset = (firstDay + 6) % 7;
       const daysInMonth = new Date(year, month + 1, 0).getDate();
 
       const monthEl = document.createElement('div');
@@ -155,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
       let row = document.createElement('tr');
       let dayCount = 0;
 
-      // Cellules vides avant le premier jour
       for (let i = 0; i < offset; i++) {
         row.appendChild(document.createElement('td'));
         dayCount++;
@@ -188,7 +354,6 @@ document.addEventListener('DOMContentLoaded', () => {
         dayCount++;
       }
 
-      // Rembourrage fin de ligne
       while (dayCount % 7 !== 0) {
         row.appendChild(document.createElement('td'));
         dayCount++;
@@ -199,7 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
       grid.appendChild(monthEl);
     });
 
-    // Légende
     const legende = document.createElement('div');
     legende.className = 'cal-legende';
     legende.innerHTML = `

@@ -20,7 +20,7 @@
 
   <!-- ===================== NAVIGATION ===================== -->
   <nav id="navbar" role="navigation" aria-label="Navigation principale">
-    <a href="#" class="nav-logo" aria-label="Accueil">Les Étangs de Sologne</a>
+    <a href="#" class="nav-logo" id="cms-nom-gite" aria-label="Accueil">Les Étangs de Sologne</a>
 
     <div class="nav-links" id="nav-links">
       <a href="#propriete">La Propriété</a>
@@ -43,8 +43,8 @@
 
     <div class="hero-content">
       <span class="hero-eyebrow">Sologne &mdash; Loir-et-Cher</span>
-      <h1>Les Étangs<br>de Sologne</h1>
-      <p>Un havre de paix au cœur des forêts et des étangs, pour des vacances ressourçantes au fil de l'eau.</p>
+      <h1 id="cms-hero-titre">Les Étangs de Sologne</h1>
+      <p id="cms-hero-slogan">Un havre de paix au cœur des forêts et des étangs, pour des vacances ressourçantes au fil de l'eau.</p>
       <div class="hero-buttons">
         <a href="#propriete" class="btn btn-outline">Découvrir</a>
         <a href="#contact" class="btn btn-primary">Réserver votre séjour</a>
@@ -75,31 +75,33 @@
 
       <div class="propriete-grid">
         <div class="propriete-image fade-in fade-in-delay-1">
-          <img src="https://picsum.photos/seed/maison-sologne/800/600"
+          <img id="cms-propriete-img" src="https://picsum.photos/seed/maison-sologne/800/600"
                alt="La maison du gîte vue de l'extérieur" loading="lazy" />
         </div>
 
         <div class="fade-in fade-in-delay-2">
-          <p>Construite en 1887 et entièrement rénovée, la maison a conservé son âme d'antan : cheminée en pierre, tomettes au sol, poutres apparentes. Elle offre tout le confort moderne pour un séjour inoubliable.</p>
-          <p>L'étang privé de 2 hectares s'étend juste devant la terrasse. Canoë, barque de pêche et pontons sont à votre disposition pour profiter pleinement du cadre naturel exceptionnel.</p>
+          <div id="cms-propriete-desc">
+            <p>Construite en 1887 et entièrement rénovée, la maison a conservé son âme d'antan : cheminée en pierre, tomettes au sol, poutres apparentes. Elle offre tout le confort moderne pour un séjour inoubliable.</p>
+            <p>L'étang privé de 2 hectares s'étend juste devant la terrasse. Canoë, barque de pêche et pontons sont à votre disposition pour profiter pleinement du cadre naturel exceptionnel.</p>
+          </div>
 
           <div class="propriete-stats">
             <div class="stat-item">
-              <span class="stat-num">10</span>
+              <span class="stat-num" id="cms-capacite">10</span>
               <span class="stat-label">Personnes</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num">4</span>
+              <span class="stat-num" id="cms-chambres">4</span>
               <span class="stat-label">Chambres</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num">180</span>
+              <span class="stat-num" id="cms-surface">180</span>
               <span class="stat-label">m²</span>
             </div>
           </div>
 
           <h3>Équipements</h3>
-          <ul class="equipements-list">
+          <ul class="equipements-list" id="cms-equipements">
             <li>Cuisine équipée</li>
             <li>Lave-vaisselle</li>
             <li>Cheminée à bois</li>
@@ -145,7 +147,7 @@
         <p>Cliquez sur une photo pour l'agrandir</p>
       </div>
 
-      <div class="galerie-grid" role="list">
+      <div class="galerie-grid" id="cms-galerie" role="list">
         <div class="galerie-item fade-in" role="listitem"
              data-full="https://picsum.photos/seed/sologne1/1200/800"
              data-caption="Vue sur l'étang au lever du soleil">
@@ -245,7 +247,7 @@
                   <th>Séjour min.</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody id="cms-tarifs-tbody">
                 <tr>
                   <td>
                     <span class="saison-badge saison-haute">Haute</span>
@@ -285,11 +287,11 @@
         <div class="tarifs-infos fade-in fade-in-delay-2">
           <div class="info-card">
             <h4>Caution</h4>
-            <p>800 € par chèque ou virement, restituée sous 7 jours après l'état des lieux de sortie.</p>
+            <p id="cms-caution">800 € par chèque ou virement, restituée sous 7 jours après l'état des lieux de sortie.</p>
           </div>
           <div class="info-card">
             <h4>Taxe de séjour</h4>
-            <p>0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur.</p>
+            <p id="cms-taxe">0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur.</p>
           </div>
           <div class="info-card">
             <h4>Ménage de fin de séjour</h4>
@@ -427,20 +429,22 @@
       <div class="proprio-layout">
         <div class="proprio-photo-wrap fade-in">
           <div class="proprio-photo">
-            <img src="https://picsum.photos/seed/proprio-couple/440/440"
-                 alt="François et Isabelle Marchais, propriétaires du gîte" loading="lazy" />
+            <img id="cms-proprio-photo" src="https://picsum.photos/seed/proprio-couple/440/440"
+                 alt="Les propriétaires du gîte" loading="lazy" />
           </div>
-          <blockquote class="proprio-citation">
+          <blockquote class="proprio-citation" id="cms-proprio-citation">
             « La Sologne, c'est une façon de vivre plus lente, plus vraie. Nous avons hâte de vous la faire découvrir. »
           </blockquote>
         </div>
 
         <div class="fade-in fade-in-delay-2">
-          <h3>François &amp; Isabelle Marchais</h3>
-          <p>Originaires du Berry, nous avons découvert cette maison lors d'une randonnée à vélo il y a quinze ans. Coup de cœur immédiat pour la lumière sur l'étang, le silence de la forêt et l'odeur des sous-bois à l'automne.</p>
-          <p>Après une longue restauration dans le respect de l'architecture solognote, nous avons choisi d'ouvrir notre demeure aux voyageurs qui, comme nous, cherchent à renouer avec la nature sans sacrifier le confort.</p>
-          <p>Chasseur passionné depuis l'enfance, François connaît chaque sente du domaine. Isabelle, ancienne chef de rang, a mis tout son soin dans la décoration intérieure et sera ravie de vous recommander les meilleurs producteurs locaux et les marchés à ne pas manquer.</p>
-          <p><strong>Nous sommes disponibles pour répondre à toutes vos questions et personnaliser votre séjour.</strong> N'hésitez pas à nous contacter, même pour un renseignement.</p>
+          <h3 id="cms-proprio-nom">François &amp; Isabelle Marchais</h3>
+          <div id="cms-proprio-texte">
+            <p>Originaires du Berry, nous avons découvert cette maison lors d'une randonnée à vélo il y a quinze ans. Coup de cœur immédiat pour la lumière sur l'étang, le silence de la forêt et l'odeur des sous-bois à l'automne.</p>
+            <p>Après une longue restauration dans le respect de l'architecture solognote, nous avons choisi d'ouvrir notre demeure aux voyageurs qui, comme nous, cherchent à renouer avec la nature sans sacrifier le confort.</p>
+            <p>Chasseur passionné depuis l'enfance, François connaît chaque sente du domaine. Isabelle, ancienne chef de rang, a mis tout son soin dans la décoration intérieure et sera ravie de vous recommander les meilleurs producteurs locaux et les marchés à ne pas manquer.</p>
+            <p><strong>Nous sommes disponibles pour répondre à toutes vos questions et personnaliser votre séjour.</strong> N'hésitez pas à nous contacter, même pour un renseignement.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -478,7 +482,7 @@
           <span class="loc-icon" aria-hidden="true">📍</span>
           <div>
             <strong>Adresse</strong>
-            <span>Les Étangs de Sologne<br>Route de l'Étang Neuf<br>41600 Souvigny-en-Sologne</span>
+            <span id="cms-loc-adresse">Les Étangs de Sologne<br>Route de l'Étang Neuf<br>41600 Souvigny-en-Sologne</span>
           </div>
         </div>
         <div class="loc-info">
@@ -523,14 +527,14 @@
             <span class="contact-item-icon" aria-hidden="true">📞</span>
             <div>
               <strong>Téléphone</strong>
-              <a href="tel:+33612345678">+33 6 12 34 56 78</a>
+              <a id="cms-contact-tel" href="tel:+33612345678">+33 6 12 34 56 78</a>
             </div>
           </div>
           <div class="contact-item">
             <span class="contact-item-icon" aria-hidden="true">✉️</span>
             <div>
               <strong>Email</strong>
-              <a href="mailto:contact@etangs-sologne.fr">contact@etangs-sologne.fr</a>
+              <a id="cms-contact-email" href="mailto:contact@etangs-sologne.fr">contact@etangs-sologne.fr</a>
             </div>
           </div>
           <div class="contact-item">
@@ -642,7 +646,7 @@
   <!-- ===================== FOOTER ===================== -->
   <footer>
     <div class="footer-inner">
-      <div class="footer-logo">Les Étangs de Sologne</div>
+      <div class="footer-logo" id="cms-footer-nom">Les Étangs de Sologne</div>
       <div class="footer-links">
         <a href="#propriete">La Propriété</a>
         <a href="#galerie">Galerie</a>
@@ -654,7 +658,7 @@
       <p style="margin:0;font-size:0.8rem">
         &copy; 2026 Les Étangs de Sologne &mdash;
         Route de l'Étang Neuf, 41600 Souvigny-en-Sologne &mdash;
-        <a href="mailto:contact@etangs-sologne.fr">contact@etangs-sologne.fr</a>
+        <a id="cms-footer-email" href="mailto:contact@etangs-sologne.fr">contact@etangs-sologne.fr</a>
       </p>
     </div>
   </footer>

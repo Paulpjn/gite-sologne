@@ -65,10 +65,15 @@ collections:
 
   - name: "galerie"
     label: "Galerie Photos"
-    folder: "_data/galerie"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Titre / Légende", name: "titre", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Ordre d'affichage", name: "ordre", widget: "number", default: 1 }
+    files:
+      - name: "photos"
+        label: "Photos de la galerie"
+        file: "_data/galerie.json"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            fields:
+              - { label: "Titre / Légende", name: "titre", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Ordre d'affichage", name: "ordre", widget: "number", default: 1 }
