@@ -1,12 +1,44 @@
 {
   "photos": [
-    { "titre": "Vue sur l'étang au lever du soleil", "photo": "https://picsum.photos/seed/sologne1/600/400", "ordre": 1 },
-    { "titre": "Le salon avec cheminée", "photo": "https://picsum.photos/seed/sologne2/600/400", "ordre": 2 },
-    { "titre": "La cuisine équipée", "photo": "https://picsum.photos/seed/sologne3/600/400", "ordre": 3 },
-    { "titre": "Chambre principale avec vue sur l'étang", "photo": "https://picsum.photos/seed/sologne4/600/400", "ordre": 4 },
-    { "titre": "La terrasse en bois face à l'étang", "photo": "https://picsum.photos/seed/sologne5/600/400", "ordre": 5 },
-    { "titre": "La forêt à deux pas du gîte", "photo": "https://picsum.photos/seed/sologne6/600/400", "ordre": 6 },
-    { "titre": "La barque sur l'étang privé", "photo": "https://picsum.photos/seed/sologne7/600/400", "ordre": 7 },
-    { "titre": "Coucher de soleil sur les étangs", "photo": "https://picsum.photos/seed/sologne8/600/400", "ordre": 8 }
+    {
+      "titre": "Vue sur l'étang au lever du soleil",
+      "photo": "https://picsum.photos/seed/sologne1/600/400",
+      "ordre": 1
+    },
+    {
+      "titre": "Le salon avec cheminée",
+      "photo": "https://picsum.photos/seed/sologne2/600/400",
+      "ordre": 2
+    },
+    {
+      "titre": "La cuisine équipée",
+      "photo": "https://picsum.photos/seed/sologne3/600/400",
+      "ordre": 3
+    },
+    {
+      "titre": "Chambre principale avec vue sur l'étang",
+      "photo": "https://picsum.photos/seed/sologne4/600/400",
+      "ordre": 4
+    },
+    {
+      "titre": "La terrasse en bois face à l'étang",
+      "photo": "https://picsum.photos/seed/sologne5/600/400",
+      "ordre": 5
+    },
+    {
+      "titre": "La forêt à deux pas du gîte",
+      "photo": "https://picsum.photos/seed/sologne6/600/400",
+      "ordre": 6
+    },
+    {
+      "titre": "La barque sur l'étang privé",
+      "photo": "https://picsum.photos/seed/sologne7/600/400",
+      "ordre": 7
+    },
+    {
+      "titre": "Coucher de soleil sur les étangs",
+      "photo": "/images/bnb_image_55.jpeg",
+      "ordre": 8
+    }
   ]
 }
