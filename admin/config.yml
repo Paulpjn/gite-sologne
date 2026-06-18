@@ -12,16 +12,16 @@ collections:
     label: "Paramètres du site"
     files:
       - name: "general"
-        label: "Informations générales"
+        label: "Page d'accueil"
         file: "_data/general.json"
         fields:
-          - { label: "Nom du gîte", name: "nom_gite", widget: "string" }
-          - { label: "Slogan", name: "slogan", widget: "string" }
-          - { label: "Description courte (hero)", name: "description_hero", widget: "text" }
+          - { label: "Nom du gîte (navbar + pied de page)", name: "nom_gite", widget: "string" }
+          - { label: "Slogan (sous-titre au-dessus du titre)", name: "slogan", widget: "string" }
+          - { label: "Titre principal du hero", name: "titre_hero", widget: "string" }
+          - { label: "Description courte du hero", name: "description_hero", widget: "text" }
+          - { label: "Texte du bouton principal", name: "btn_principal", widget: "string" }
+          - { label: "Texte du bouton secondaire", name: "btn_secondaire", widget: "string" }
           - { label: "Photo de fond du hero", name: "photo_hero", widget: "image", required: false }
-          - { label: "Email de contact", name: "email", widget: "string" }
-          - { label: "Téléphone", name: "telephone", widget: "string" }
-          - { label: "Adresse", name: "adresse", widget: "text" }
 
       - name: "propriete"
         label: "La Propriété"
@@ -99,6 +99,9 @@ collections:
         label: "Contact"
         file: "_data/contact.json"
         fields:
+          - { label: "Email de contact", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "telephone", widget: "string" }
+          - { label: "Adresse", name: "adresse", widget: "text" }
           - { label: "Message d'accueil", name: "message_accueil", widget: "text" }
           - { label: "Horaires de disponibilité", name: "horaires", widget: "string" }
           - { label: "Heure d'arrivée", name: "heure_arrivee", widget: "string" }

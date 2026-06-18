@@ -174,37 +174,19 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyGeneral(d) {
     if (!d) return;
 
-    [el('cms-nom-gite'), el('cms-footer-nom'), el('cms-hero-titre')].forEach(node => {
+    [el('cms-nom-gite'), el('cms-footer-nom')].forEach(node => {
       if (node) node.textContent = d.nom_gite;
     });
 
+    setText('cms-hero-titre', d.titre_hero || d.nom_gite);
     setText('cms-hero-eyebrow', d.slogan);
     setText('cms-hero-slogan', d.description_hero);
+    setText('cms-btn-principal', d.btn_principal);
+    setText('cms-btn-secondaire', d.btn_secondaire);
 
     if (d.photo_hero) {
       const heroBg = document.querySelector('.hero-bg');
       if (heroBg) heroBg.style.backgroundImage = `url('${d.photo_hero}')`;
-    }
-
-    if (d.telephone) {
-      const tel = el('cms-contact-tel');
-      if (tel) {
-        tel.textContent = d.telephone;
-        tel.href = 'tel:' + d.telephone.replace(/\s/g, '');
-      }
-    }
-
-    if (d.email) {
-      [el('cms-contact-email'), el('cms-footer-email')].forEach(node => {
-        if (node) {
-          node.textContent = d.email;
-          node.href = 'mailto:' + d.email;
-        }
-      });
-    }
-
-    if (d.adresse) {
-      setHTML('cms-loc-adresse', d.adresse.replace(/\n/g, '<br>'));
     }
 
     document.title = d.nom_gite || document.title;
@@ -354,6 +336,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applyContact(d) {
     if (!d) return;
+
+    if (d.telephone) {
+      const tel = el('cms-contact-tel');
+      if (tel) {
+        tel.textContent = d.telephone;
+        tel.href = 'tel:' + d.telephone.replace(/\s/g, '');
+      }
+    }
+
+    if (d.email) {
+      [el('cms-contact-email'), el('cms-footer-email')].forEach(node => {
+        if (node) {
+          node.textContent = d.email;
+          node.href = 'mailto:' + d.email;
+        }
+      });
+    }
+
+    if (d.adresse) {
+      setHTML('cms-loc-adresse', d.adresse.replace(/\n/g, '<br>'));
+    }
+
     if (d.message_accueil) setText('cms-contact-message', d.message_accueil);
     if (d.horaires) setText('cms-contact-horaires', d.horaires);
     if (d.heure_arrivee) setText('cms-contact-arrivee', d.heure_arrivee);

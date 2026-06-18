@@ -1,4 +1,7 @@
 {
+  "email": "test@gmail.com",
+  "telephone": "06 12 34 56 78",
+  "adresse": "12 Chemin des Étangs\n45370 Jouy Le Potier\nFrance",
   "message_accueil": "Nous répondons sous 24 h en moyenne. Pour une réponse rapide, n'hésitez pas à nous appeler directement.",
   "horaires": "Lundi–Samedi, 9h–20h · Réponse garantie sous 24h",
   "heure_arrivee": "À partir de 17h",
