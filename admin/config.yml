@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Paulpjn/gite-sologne
   branch: main
-  base_url: https://paulpjn.github.io/gite-sologne
+  base_url: https://gite-sologne-oauth.VOTRE_COMPTE.workers.dev
 
 site_url: https://paulpjn.github.io/gite-sologne
 
