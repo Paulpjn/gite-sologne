@@ -79,11 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const showNext = () => openLightbox((currentIndex + 1) % galerieItems.length);
 
   const initLightbox = () => {
-    galerieItems = [...document.querySelectorAll('.galerie-item')];
-    galerieItems.forEach((item, idx) => {
-      item.addEventListener('click', () => openLightbox(idx));
+    document.querySelectorAll('.galerie-grid').forEach(grid => {
+      grid.addEventListener('click', (e) => {
+        const item = e.target.closest('.galerie-item');
+        if (!item) return;
+        galerieItems = [...grid.querySelectorAll('.galerie-item')];
+        openLightbox(galerieItems.indexOf(item));
+      });
     });
   };
+
+  initLightbox();
 
   if (lbClose) lbClose.addEventListener('click', closeLightbox);
   if (lbPrev)  lbPrev.addEventListener('click', showPrev);
@@ -120,12 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
       applyTarifs(tarifs);
       applyProprietaires(proprietaires);
       applyGalerie(galerie);
-
-      initLightbox();
-      document.querySelectorAll('#cms-galerie .fade-in').forEach(el => observer.observe(el));
+      initGalerieTabs();
+      document.querySelectorAll('.galerie-grid .fade-in').forEach(el => observer.observe(el));
     } catch (e) {
       console.warn('Données CMS non chargées :', e);
-      initLightbox();
     }
   }
 
@@ -253,12 +257,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyGalerie(d) {
-    const grid = el('cms-galerie');
-    if (!grid || !d || !Array.isArray(d.photos) || !d.photos.length) return;
+    if (!d) return;
+    renderGalerieGrid('cms-galerie-interieur', d.interieur);
+    renderGalerieGrid('cms-galerie-exterieur', d.exterieur);
+  }
 
+  function renderGalerieGrid(gridId, photos) {
+    const grid = el(gridId);
+    if (!grid || !Array.isArray(photos) || !photos.length) return;
     const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2', 'fade-in-delay-3'];
-    const sorted = [...d.photos].sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
-
+    const sorted = [...photos].sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
     grid.innerHTML = sorted.map((photo, i) => {
       const delay = delays[i % delays.length];
       return `<div class="galerie-item fade-in ${delay}" role="listitem"
@@ -268,6 +276,21 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
       </div>`;
     }).join('');
+  }
+
+  function initGalerieTabs() {
+    document.querySelectorAll('.galerie-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.galerie-tab').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.querySelectorAll('.galerie-grid').forEach(grid => grid.classList.add('galerie-hidden'));
+        el(`cms-galerie-${tab.dataset.tab}`)?.classList.remove('galerie-hidden');
+      });
+    });
   }
 
   /* ---- MINI CALENDRIER DISPONIBILITÉS ---- */

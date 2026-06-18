@@ -147,63 +147,15 @@
         <p>Cliquez sur une photo pour l'agrandir</p>
       </div>
 
-      <div class="galerie-grid" id="cms-galerie" role="list">
-        <div class="galerie-item fade-in" role="listitem"
-             data-full="https://picsum.photos/seed/sologne1/1200/800"
-             data-caption="Vue sur l'étang au lever du soleil">
-          <img src="https://picsum.photos/seed/sologne1/600/400" alt="Vue sur l'étang au lever du soleil" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
-
-        <div class="galerie-item fade-in fade-in-delay-1" role="listitem"
-             data-full="https://picsum.photos/seed/sologne2/1200/800"
-             data-caption="Le salon avec cheminée">
-          <img src="https://picsum.photos/seed/sologne2/600/400" alt="Le salon avec cheminée" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
-
-        <div class="galerie-item fade-in fade-in-delay-2" role="listitem"
-             data-full="https://picsum.photos/seed/sologne3/1200/800"
-             data-caption="La cuisine équipée">
-          <img src="https://picsum.photos/seed/sologne3/600/400" alt="La cuisine équipée" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
-
-        <div class="galerie-item fade-in fade-in-delay-3" role="listitem"
-             data-full="https://picsum.photos/seed/sologne4/1200/800"
-             data-caption="Chambre principale avec vue sur l'étang">
-          <img src="https://picsum.photos/seed/sologne4/600/400" alt="Chambre principale" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
-
-        <div class="galerie-item fade-in" role="listitem"
-             data-full="https://picsum.photos/seed/sologne5/1200/800"
-             data-caption="La terrasse en bois face à l'étang">
-          <img src="https://picsum.photos/seed/sologne5/600/400" alt="La terrasse en bois" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
-
-        <div class="galerie-item fade-in fade-in-delay-1" role="listitem"
-             data-full="https://picsum.photos/seed/sologne6/1200/800"
-             data-caption="La forêt à deux pas du gîte">
-          <img src="https://picsum.photos/seed/sologne6/600/400" alt="La forêt de Sologne" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
-
-        <div class="galerie-item fade-in fade-in-delay-2" role="listitem"
-             data-full="https://picsum.photos/seed/sologne7/1200/800"
-             data-caption="La barque sur l'étang privé">
-          <img src="https://picsum.photos/seed/sologne7/600/400" alt="Barque sur l'étang" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
-
-        <div class="galerie-item fade-in fade-in-delay-3" role="listitem"
-             data-full="https://picsum.photos/seed/sologne8/1200/800"
-             data-caption="Coucher de soleil sur les étangs">
-          <img src="https://picsum.photos/seed/sologne8/600/400" alt="Coucher de soleil sur les étangs" loading="lazy" />
-          <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
-        </div>
+      <div class="galerie-tabs" role="tablist">
+        <button class="galerie-tab active" data-tab="interieur"
+                role="tab" aria-selected="true" aria-controls="cms-galerie-interieur">Intérieur</button>
+        <button class="galerie-tab" data-tab="exterieur"
+                role="tab" aria-selected="false" aria-controls="cms-galerie-exterieur">Extérieur</button>
       </div>
+
+      <div class="galerie-grid" id="cms-galerie-interieur" role="list"></div>
+      <div class="galerie-grid galerie-hidden" id="cms-galerie-exterieur" role="list"></div>
     </div>
   </section>
 

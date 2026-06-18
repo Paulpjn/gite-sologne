@@ -70,8 +70,15 @@ collections:
         label: "Photos de la galerie"
         file: "_data/galerie.json"
         fields:
-          - label: "Photos"
-            name: "photos"
+          - label: "Photos Intérieur"
+            name: "interieur"
+            widget: "list"
+            fields:
+              - { label: "Titre / Légende", name: "titre", widget: "string" }
+              - { label: "Photo", name: "photo", widget: "image" }
+              - { label: "Ordre d'affichage", name: "ordre", widget: "number", default: 1 }
+          - label: "Photos Extérieur"
+            name: "exterieur"
             widget: "list"
             fields:
               - { label: "Titre / Légende", name: "titre", widget: "string" }
