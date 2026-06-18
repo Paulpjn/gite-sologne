@@ -10,6 +10,6 @@
     { "titre": "La terrasse en bois face à l'étang", "photo": "https://picsum.photos/seed/sologne5/600/400", "ordre": 2 },
     { "titre": "La forêt à deux pas du gîte", "photo": "https://picsum.photos/seed/sologne6/600/400", "ordre": 3 },
     { "titre": "La barque sur l'étang privé", "photo": "https://picsum.photos/seed/sologne7/600/400", "ordre": 4 },
-    { "titre": "Coucher de soleil sur les étangs", "photo": "https://picsum.photos/seed/sologne8/600/400", "ordre": 5 }
+    { "titre": "Coucher de soleil sur les étangs", "photo": "/images/bnb_image_55.jpeg", "ordre": 5 }
   ]
 }
