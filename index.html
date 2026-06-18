@@ -13,8 +13,6 @@
 
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Netlify Identity (pour l'admin CMS) -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 </head>
 <body>
 
@@ -695,18 +693,6 @@
 
   <script src="js/main.js"></script>
 
-  <!-- Redirect Netlify Identity vers l'admin -->
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', user => {
-        if (!user) {
-          window.netlifyIdentity.on('login', () => {
-            document.location.href = '/admin/';
-          });
-        }
-      });
-    }
-  </script>
 
 </body>
 </html>

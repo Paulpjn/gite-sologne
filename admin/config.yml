@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Paulpjn/gite-sologne
   branch: main
+  base_url: https://paulpjn.github.io/gite-sologne
+
+site_url: https://paulpjn.github.io/gite-sologne
 
 media_folder: "images"
 public_folder: "/images"
