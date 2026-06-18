@@ -164,11 +164,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyGeneral(d) {
     if (!d) return;
 
-    [el('cms-nom-gite'), el('cms-footer-nom')].forEach(node => {
+    [el('cms-nom-gite'), el('cms-footer-nom'), el('cms-hero-titre')].forEach(node => {
       if (node) node.textContent = d.nom_gite;
     });
 
-    setText('cms-hero-slogan', d.description_hero || d.slogan);
+    setText('cms-hero-eyebrow', d.slogan);
+    setText('cms-hero-slogan', d.description_hero);
+
+    if (d.photo_hero) {
+      const heroBg = document.querySelector('.hero-bg');
+      if (heroBg) heroBg.style.backgroundImage = `url('${d.photo_hero}')`;
+    }
 
     if (d.telephone) {
       const tel = el('cms-contact-tel');

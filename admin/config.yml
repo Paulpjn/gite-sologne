@@ -18,6 +18,7 @@ collections:
           - { label: "Nom du gîte", name: "nom_gite", widget: "string" }
           - { label: "Slogan", name: "slogan", widget: "string" }
           - { label: "Description courte (hero)", name: "description_hero", widget: "text" }
+          - { label: "Photo de fond du hero", name: "photo_hero", widget: "image", required: false }
           - { label: "Email de contact", name: "email", widget: "string" }
           - { label: "Téléphone", name: "telephone", widget: "string" }
           - { label: "Adresse", name: "adresse", widget: "text" }
