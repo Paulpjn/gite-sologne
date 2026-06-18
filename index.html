@@ -290,7 +290,7 @@
         <p style="max-width:600px;margin:0 auto">La Sologne est un paradis naturel de 500 000 hectares. Découvrez ses richesses au fil de vos séjours.</p>
       </div>
 
-      <div class="activites-grid">
+      <div class="activites-grid" id="cms-activites-grid">
 
         <article class="activite-card fade-in">
           <div class="activite-img">
@@ -402,11 +402,85 @@
     </div>
   </section>
 
-  <!-- Vague propriétaires → localisation -->
-  <div class="wave-separator" style="background:#fff" aria-hidden="true">
+  <!-- Vague propriétaires → avis -->
+  <div class="wave-separator" style="background:#2D4A2D" aria-hidden="true">
     <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,15 C240,50 600,5 900,35 C1100,55 1300,20 1440,25 L1440,60 L0,60 Z"
             fill="#F5F0E8"/>
+    </svg>
+  </div>
+
+  <!-- ===================== AVIS ===================== -->
+  <section id="avis" aria-labelledby="titre-avis">
+    <div class="section-inner">
+      <div class="section-header fade-in">
+        <p class="section-subtitle">Ce qu'ils en disent</p>
+        <h2 id="titre-avis">Avis de nos voyageurs</h2>
+      </div>
+
+      <div class="avis-grid" id="cms-avis">
+        <article class="avis-card fade-in">
+          <div class="avis-etoiles" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote class="avis-texte">« Un séjour absolument magique au bord de l'étang. La maison est magnifique, chaleureuse et parfaitement équipée. Les propriétaires sont aux petits soins. Nous reviendrons sans hésitation ! »</blockquote>
+          <footer class="avis-footer">
+            <strong class="avis-auteur">Marie &amp; Pierre D.</strong>
+            <time class="avis-date" datetime="2025-08-15">Août 2025</time>
+          </footer>
+        </article>
+
+        <article class="avis-card fade-in fade-in-delay-1">
+          <div class="avis-etoiles" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote class="avis-texte">« Coup de cœur total pour ce gîte exceptionnel. La pêche au bord de l'étang privé est un vrai bonheur pour toute la famille. Cadre naturel splendide, calme absolu. »</blockquote>
+          <footer class="avis-footer">
+            <strong class="avis-auteur">Famille Rousseau</strong>
+            <time class="avis-date" datetime="2025-07-22">Juillet 2025</time>
+          </footer>
+        </article>
+
+        <article class="avis-card fade-in fade-in-delay-2">
+          <div class="avis-etoiles" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote class="avis-texte">« Nous avons passé une semaine parfaite en Sologne. La forêt à deux pas, les vélos disponibles, la cheminée le soir... Tout était parfait. La décoration est vraiment soignée. »</blockquote>
+          <footer class="avis-footer">
+            <strong class="avis-auteur">Isabelle &amp; Marc L.</strong>
+            <time class="avis-date" datetime="2025-09-05">Septembre 2025</time>
+          </footer>
+        </article>
+
+        <article class="avis-card fade-in">
+          <div class="avis-etoiles" aria-label="Note : 4 sur 5">★★★★☆</div>
+          <blockquote class="avis-texte">« Superbe propriété pour un séjour de chasse. Le chenil est très bien aménagé et les propriétaires connaissent le terrain à la perfection. Je recommande vivement. »</blockquote>
+          <footer class="avis-footer">
+            <strong class="avis-auteur">Thomas V.</strong>
+            <time class="avis-date" datetime="2025-10-12">Octobre 2025</time>
+          </footer>
+        </article>
+
+        <article class="avis-card fade-in fade-in-delay-1">
+          <div class="avis-etoiles" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote class="avis-texte">« Nous cherchions un endroit pour déconnecter en famille. Ce gîte est la perle rare ! Les enfants ont adoré la barque sur l'étang. Un vrai bonheur de nature à portée de main. »</blockquote>
+          <footer class="avis-footer">
+            <strong class="avis-auteur">Sophie &amp; Julien B.</strong>
+            <time class="avis-date" datetime="2026-04-18">Avril 2026</time>
+          </footer>
+        </article>
+
+        <article class="avis-card fade-in fade-in-delay-2">
+          <div class="avis-etoiles" aria-label="Note : 5 sur 5">★★★★★</div>
+          <blockquote class="avis-texte">« Troisième séjour consécutif et toujours aussi enchantés ! L'accueil est irréprochable. La Sologne en automne avec les champignons reste notre préféré. »</blockquote>
+          <footer class="avis-footer">
+            <strong class="avis-auteur">Famille Martin</strong>
+            <time class="avis-date" datetime="2026-03-28">Mars 2026</time>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vague avis → localisation -->
+  <div class="wave-separator" style="background:#fff" aria-hidden="true">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,45 C300,10 700,55 1100,20 C1280,7 1390,40 1440,45 L1440,60 L0,60 Z"
+            fill="#2D4A2D"/>
     </svg>
   </div>
 
@@ -416,12 +490,13 @@
       <div class="section-header fade-in">
         <p class="section-subtitle">Comment nous trouver</p>
         <h2 id="titre-localisation">Localisation</h2>
-        <p>Au cœur de la Sologne, commune de Souvigny-en-Sologne (Loir-et-Cher, 41)</p>
+        <p id="cms-loc-description">Au cœur de la Sologne, commune de Souvigny-en-Sologne (Loir-et-Cher, 41)</p>
       </div>
 
       <div class="carte-wrap fade-in">
         <!-- OpenStreetMap centré sur la Sologne (Souvigny-en-Sologne) -->
         <iframe
+          id="carte-iframe"
           src="https://www.openstreetmap.org/export/embed.html?bbox=1.9668%2C47.4850%2C2.1868%2C47.6050&layer=mapnik&marker=47.5450%2C2.0768"
           title="Carte de localisation du gîte — Souvigny-en-Sologne"
           allowfullscreen
@@ -437,18 +512,20 @@
             <span id="cms-loc-adresse">Les Étangs de Sologne<br>Route de l'Étang Neuf<br>41600 Souvigny-en-Sologne</span>
           </div>
         </div>
-        <div class="loc-info">
-          <span class="loc-icon" aria-hidden="true">🚗</span>
-          <div>
-            <strong>En voiture</strong>
-            <span>Paris A71 &rarr; sortie Lamotte-Beuvron (1h45)<br>Tours : 1h00 &bull; Orléans : 45 min</span>
+        <div id="cms-loc-distances" style="display:contents">
+          <div class="loc-info">
+            <span class="loc-icon" aria-hidden="true">🚗</span>
+            <div>
+              <strong>En voiture</strong>
+              <span>Paris A71 &rarr; sortie Lamotte-Beuvron (1h45)<br>Tours : 1h00 &bull; Orléans : 45 min</span>
+            </div>
           </div>
-        </div>
-        <div class="loc-info">
-          <span class="loc-icon" aria-hidden="true">🚆</span>
-          <div>
-            <strong>En train</strong>
-            <span>Gare de Lamotte-Beuvron (TER depuis Paris-Austerlitz, 1h30) &bull; Navette possible sur demande</span>
+          <div class="loc-info">
+            <span class="loc-icon" aria-hidden="true">🚆</span>
+            <div>
+              <strong>En train</strong>
+              <span>Gare de Lamotte-Beuvron (TER depuis Paris-Austerlitz, 1h30) &bull; Navette possible sur demande</span>
+            </div>
           </div>
         </div>
       </div>
@@ -469,7 +546,7 @@
       <div class="section-header fade-in">
         <p class="section-subtitle">Nous contacter</p>
         <h2 id="titre-contact">Réservation &amp; Informations</h2>
-        <p>Nous répondons sous 24 h en moyenne. Pour une réponse rapide, n'hésitez pas à nous appeler directement.</p>
+        <p id="cms-contact-message">Nous répondons sous 24 h en moyenne. Pour une réponse rapide, n'hésitez pas à nous appeler directement.</p>
       </div>
 
       <div class="contact-layout">
@@ -493,14 +570,14 @@
             <span class="contact-item-icon" aria-hidden="true">🕐</span>
             <div>
               <strong>Disponibilité</strong>
-              <span>Lundi&ndash;Samedi, 9h&ndash;20h<br>Réponse garantie sous 24h</span>
+              <span id="cms-contact-horaires">Lundi&ndash;Samedi, 9h&ndash;20h<br>Réponse garantie sous 24h</span>
             </div>
           </div>
           <div class="contact-item">
             <span class="contact-item-icon" aria-hidden="true">📅</span>
             <div>
               <strong>Arrivée / Départ</strong>
-              <span>Arrivée à partir de 17h<br>Départ avant 11h</span>
+              <span><span id="cms-contact-arrivee">Arrivée à partir de 17h</span><br><span id="cms-contact-depart">Départ avant 11h</span></span>
             </div>
           </div>
         </div>
@@ -604,6 +681,7 @@
         <a href="#galerie">Galerie</a>
         <a href="#tarifs">Tarifs</a>
         <a href="#activites">Activités</a>
+        <a href="#avis">Avis</a>
         <a href="#contact">Contact</a>
         <a href="/admin/">Administration</a>
       </div>

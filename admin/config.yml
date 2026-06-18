@@ -64,6 +64,46 @@ collections:
           - { label: "Photo", name: "photo", widget: "image", required: false }
           - { label: "Citation personnelle", name: "citation", widget: "text", required: false }
 
+      - name: "activites"
+        label: "Activités"
+        file: "_data/activites.json"
+        fields:
+          - { label: "Sous-titre", name: "sous_titre", widget: "string" }
+          - { label: "Titre de section", name: "titre", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+          - label: "Liste des activités"
+            name: "activites"
+            widget: "list"
+            fields:
+              - { label: "Icône (emoji)", name: "icone", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Photo", name: "photo", widget: "image", required: false }
+
+      - name: "localisation"
+        label: "Localisation"
+        file: "_data/localisation.json"
+        fields:
+          - { label: "Description de la section", name: "description", widget: "text" }
+          - { label: "Latitude GPS", name: "latitude", widget: "number", value_type: "float", step: 0.0001 }
+          - { label: "Longitude GPS", name: "longitude", widget: "number", value_type: "float", step: 0.0001 }
+          - label: "Distances / Accès"
+            name: "distances"
+            widget: "list"
+            fields:
+              - { label: "Icône (emoji)", name: "icone", widget: "string" }
+              - { label: "Mode de transport", name: "label", widget: "string" }
+              - { label: "Détail", name: "detail", widget: "text" }
+
+      - name: "contact"
+        label: "Contact"
+        file: "_data/contact.json"
+        fields:
+          - { label: "Message d'accueil", name: "message_accueil", widget: "text" }
+          - { label: "Horaires de disponibilité", name: "horaires", widget: "string" }
+          - { label: "Heure d'arrivée", name: "heure_arrivee", widget: "string" }
+          - { label: "Heure de départ", name: "heure_depart", widget: "string" }
+
   - name: "galerie"
     label: "Galerie Photos"
     files:
@@ -85,3 +125,19 @@ collections:
               - { label: "Titre / Légende", name: "titre", widget: "string" }
               - { label: "Photo", name: "photo", widget: "image" }
               - { label: "Ordre d'affichage", name: "ordre", widget: "number", default: 1 }
+
+  - name: "avis"
+    label: "Avis voyageurs"
+    files:
+      - name: "avis"
+        label: "Avis de voyageurs"
+        file: "_data/avis.json"
+        fields:
+          - label: "Avis"
+            name: "avis"
+            widget: "list"
+            fields:
+              - { label: "Auteur", name: "auteur", widget: "string" }
+              - { label: "Note (sur 5)", name: "note", widget: "number", min: 1, max: 5, default: 5 }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+              - { label: "Texte de l'avis", name: "texte", widget: "text" }

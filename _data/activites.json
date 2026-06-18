@@ -1,0 +1,43 @@
+{
+  "sous_titre": "À faire autour du gîte",
+  "titre": "Activités & Environnement",
+  "description": "La Sologne est un paradis naturel de 500 000 hectares. Découvrez ses richesses au fil de vos séjours.",
+  "activites": [
+    {
+      "icone": "🎣",
+      "titre": "Pêche à l'étang",
+      "description": "L'étang privé de 2 hectares est poissonneux (carpe, brochet, perche). Barque fournie. Carte de pêche disponible auprès des propriétaires.",
+      "photo": "https://picsum.photos/seed/peche-sologne/600/340"
+    },
+    {
+      "icone": "🦌",
+      "titre": "Chasse",
+      "description": "La Sologne est réputée pour sa chasse. Plans de chasse au cerf, chevreuil et sanglier disponibles sur réservation. Chenil aménagé sur la propriété.",
+      "photo": "https://picsum.photos/seed/chasse-sologne/600/340"
+    },
+    {
+      "icone": "🚴",
+      "titre": "Vélo & Randonnée",
+      "description": "Plus de 200 km de pistes cyclables balisées. 6 vélos mis à disposition. Circuits au départ du gîte traversant forêts, villages et étangs.",
+      "photo": "https://picsum.photos/seed/velo-foret/600/340"
+    },
+    {
+      "icone": "🛶",
+      "titre": "Canoë & Kayak",
+      "description": "Un canoë biplace est disponible sur l'étang privé. Des sorties kayak sont organisables sur la Sauldre à 8 km du gîte.",
+      "photo": "https://picsum.photos/seed/canoe-lac/600/340"
+    },
+    {
+      "icone": "🍄",
+      "titre": "Nature & Cueillette",
+      "description": "En automne, la forêt de Sologne regorge de cèpes, girolles et trompettes de la mort. Observation de la faune sauvage à l'aube depuis les affûts.",
+      "photo": "https://picsum.photos/seed/champignons-foret/600/340"
+    },
+    {
+      "icone": "🏰",
+      "titre": "Châteaux & Patrimoine",
+      "description": "Chambord (25 km), Cheverny (30 km), Blois (35 km). La Vallée des Rois est à portée pour une excursion culturelle d'une journée.",
+      "photo": "https://picsum.photos/seed/chateau-loire/600/340"
+    }
+  ]
+}

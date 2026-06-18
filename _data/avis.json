@@ -1,0 +1,40 @@
+{
+  "avis": [
+    {
+      "auteur": "Marie & Pierre D.",
+      "note": 5,
+      "date": "2025-08-15",
+      "texte": "Un séjour absolument magique au bord de l'étang. La maison est magnifique, chaleureuse et parfaitement équipée. Les propriétaires sont aux petits soins. Nous reviendrons sans hésitation !"
+    },
+    {
+      "auteur": "Famille Rousseau",
+      "note": 5,
+      "date": "2025-07-22",
+      "texte": "Coup de cœur total pour ce gîte exceptionnel. La pêche au bord de l'étang privé est un vrai bonheur pour toute la famille. Cadre naturel splendide, calme absolu. Que du bonheur !"
+    },
+    {
+      "auteur": "Isabelle & Marc L.",
+      "note": 5,
+      "date": "2025-09-05",
+      "texte": "Nous avons passé une semaine parfaite en Sologne. La forêt à deux pas, les vélos disponibles, la cheminée le soir... Tout était parfait. La décoration intérieure est vraiment soignée."
+    },
+    {
+      "auteur": "Thomas V.",
+      "note": 4,
+      "date": "2025-10-12",
+      "texte": "Superbe propriété pour un séjour de chasse. Le chenil est très bien aménagé et les propriétaires connaissent le terrain à la perfection. Je recommande vivement pour les passionnés de nature."
+    },
+    {
+      "auteur": "Sophie & Julien B.",
+      "note": 5,
+      "date": "2026-04-18",
+      "texte": "Nous cherchions un endroit pour déconnecter en famille. Ce gîte est la perle rare ! Les enfants ont adoré la barque sur l'étang. Un vrai bonheur de voir la nature à portée de main."
+    },
+    {
+      "auteur": "Famille Martin",
+      "note": 5,
+      "date": "2026-03-28",
+      "texte": "Troisième séjour consécutif et toujours aussi enchantés ! L'accueil est irréprochable, la maison impeccable. La Sologne en automne avec les champignons reste notre préféré."
+    }
+  ]
+}

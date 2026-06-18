@@ -113,12 +113,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function loadCMSData() {
     try {
-      const [general, propriete, tarifs, proprietaires, galerie] = await Promise.all([
+      const [general, propriete, tarifs, proprietaires, galerie, activites, localisation, contact, avis] = await Promise.all([
         fetch('_data/general.json').then(r => r.json()),
         fetch('_data/propriete.json').then(r => r.json()),
         fetch('_data/tarifs.json').then(r => r.json()),
         fetch('_data/proprietaires.json').then(r => r.json()),
-        fetch('_data/galerie.json').then(r => r.json()).catch(() => ({ photos: [] })),
+        fetch('_data/galerie.json').then(r => r.json()).catch(() => ({ interieur: [], exterieur: [] })),
+        fetch('_data/activites.json').then(r => r.json()).catch(() => null),
+        fetch('_data/localisation.json').then(r => r.json()).catch(() => null),
+        fetch('_data/contact.json').then(r => r.json()).catch(() => null),
+        fetch('_data/avis.json').then(r => r.json()).catch(() => null),
       ]);
 
       applyGeneral(general);
@@ -126,8 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
       applyTarifs(tarifs);
       applyProprietaires(proprietaires);
       applyGalerie(galerie);
+      applyActivites(activites);
+      applyLocalisation(localisation);
+      applyContact(contact);
+      applyAvis(avis);
       initGalerieTabs();
       document.querySelectorAll('.galerie-grid .fade-in').forEach(el => observer.observe(el));
+      document.querySelectorAll('#cms-activites-grid .fade-in').forEach(el => observer.observe(el));
+      document.querySelectorAll('#cms-avis .fade-in').forEach(el => observer.observe(el));
     } catch (e) {
       console.warn('Données CMS non chargées :', e);
     }
@@ -297,6 +307,79 @@ document.addEventListener('DOMContentLoaded', () => {
         el(`cms-galerie-${tab.dataset.tab}`)?.classList.remove('galerie-hidden');
       });
     });
+  }
+
+  function applyActivites(d) {
+    const grid = el('cms-activites-grid');
+    if (!grid || !d || !Array.isArray(d.activites) || !d.activites.length) return;
+    const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2'];
+    grid.innerHTML = d.activites.map((a, i) => {
+      const delay = delays[i % delays.length];
+      return `<article class="activite-card fade-in ${delay}">
+        <div class="activite-img">
+          <img src="${a.photo || ''}" alt="${a.titre || ''}" loading="lazy" />
+        </div>
+        <div class="activite-body">
+          <span class="activite-icon">${a.icone || ''}</span>
+          <h3>${a.titre || ''}</h3>
+          <p>${a.description || ''}</p>
+        </div>
+      </article>`;
+    }).join('');
+  }
+
+  function applyLocalisation(d) {
+    if (!d) return;
+    if (d.description) setText('cms-loc-description', d.description);
+    if (d.latitude && d.longitude) {
+      const lat = parseFloat(d.latitude);
+      const lon = parseFloat(d.longitude);
+      const dLon = 0.11, dLat = 0.06;
+      const bbox = `${(lon - dLon).toFixed(4)}%2C${(lat - dLat).toFixed(4)}%2C${(lon + dLon).toFixed(4)}%2C${(lat + dLat).toFixed(4)}`;
+      const iframe = el('carte-iframe');
+      if (iframe) iframe.src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lon}`;
+    }
+    const distEl = el('cms-loc-distances');
+    if (distEl && Array.isArray(d.distances) && d.distances.length) {
+      distEl.innerHTML = d.distances.map(dist => `
+        <div class="loc-info">
+          <span class="loc-icon" aria-hidden="true">${dist.icone || '📍'}</span>
+          <div>
+            <strong>${dist.label || ''}</strong>
+            <span>${(dist.detail || '').replace(/\n/g, '<br>')}</span>
+          </div>
+        </div>`).join('');
+    }
+  }
+
+  function applyContact(d) {
+    if (!d) return;
+    if (d.message_accueil) setText('cms-contact-message', d.message_accueil);
+    if (d.horaires) setText('cms-contact-horaires', d.horaires);
+    if (d.heure_arrivee) setText('cms-contact-arrivee', d.heure_arrivee);
+    if (d.heure_depart) setText('cms-contact-depart', d.heure_depart);
+  }
+
+  function applyAvis(d) {
+    const grid = el('cms-avis');
+    if (!grid || !d || !Array.isArray(d.avis) || !d.avis.length) return;
+    const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2'];
+    grid.innerHTML = d.avis.map((a, i) => {
+      const note = Math.min(5, Math.max(0, parseInt(a.note) || 0));
+      const etoiles = '★'.repeat(note) + '☆'.repeat(5 - note);
+      const delay = delays[i % delays.length];
+      const dateStr = a.date
+        ? new Date(a.date + 'T00:00:00').toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })
+        : '';
+      return `<article class="avis-card fade-in ${delay}">
+        <div class="avis-etoiles" aria-label="Note : ${note} sur 5">${etoiles}</div>
+        <blockquote class="avis-texte">« ${a.texte || ''} »</blockquote>
+        <footer class="avis-footer">
+          <strong class="avis-auteur">${a.auteur || ''}</strong>
+          <time class="avis-date" datetime="${a.date || ''}">${dateStr}</time>
+        </footer>
+      </article>`;
+    }).join('');
   }
 
   /* ---- MINI CALENDRIER DISPONIBILITÉS ---- */

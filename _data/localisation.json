@@ -1,0 +1,17 @@
+{
+  "description": "Au cœur de la Sologne, commune de Souvigny-en-Sologne (Loir-et-Cher, 41)",
+  "latitude": 47.545,
+  "longitude": 2.0768,
+  "distances": [
+    {
+      "icone": "🚗",
+      "label": "En voiture",
+      "detail": "Paris A71 → sortie Lamotte-Beuvron (1h45)\nTours : 1h00 · Orléans : 45 min"
+    },
+    {
+      "icone": "🚆",
+      "label": "En train",
+      "detail": "Gare de Lamotte-Beuvron (TER depuis Paris-Austerlitz, 1h30) · Navette possible sur demande"
+    }
+  ]
+}
