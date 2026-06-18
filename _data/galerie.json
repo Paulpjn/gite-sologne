@@ -1,15 +1,31 @@
 {
   "interieur": [
-    { "titre": "Le salon avec cheminée", "photo": "https://picsum.photos/seed/sologne2/600/400", "ordre": 1 },
-    { "titre": "La cuisine équipée", "photo": "https://picsum.photos/seed/sologne3/600/400", "ordre": 2 },
-    { "titre": "Chambre principale avec vue sur l'étang", "photo": "https://picsum.photos/seed/sologne4/600/400", "ordre": 3 },
-    { "titre": "La salle de bain", "photo": "https://picsum.photos/seed/sologne9/600/400", "ordre": 4 }
+    {
+      "ordre": 1,
+      "photo": "/images/photo1.jpg",
+      "titre": "Salon"
+    },
+    {
+      "ordre": 2,
+      "photo": "/images/chambre-bas1.jpg",
+      "titre": "Chambre "
+    },
+    {
+      "ordre": 3,
+      "titre": "Chambre ",
+      "photo": "/images/chambre-haut1.jpg"
+    }
   ],
   "exterieur": [
-    { "titre": "Vue sur l'étang au lever du soleil", "photo": "https://picsum.photos/seed/sologne1/600/400", "ordre": 1 },
-    { "titre": "La terrasse en bois face à l'étang", "photo": "https://picsum.photos/seed/sologne5/600/400", "ordre": 2 },
-    { "titre": "La forêt à deux pas du gîte", "photo": "https://picsum.photos/seed/sologne6/600/400", "ordre": 3 },
-    { "titre": "La barque sur l'étang privé", "photo": "https://picsum.photos/seed/sologne7/600/400", "ordre": 4 },
-    { "titre": "Coucher de soleil sur les étangs", "photo": "/images/bnb_image_55.jpeg", "ordre": 5 }
+    {
+      "ordre": 2,
+      "photo": "/images/ext.11.jpeg",
+      "titre": "Entrée"
+    },
+    {
+      "ordre": 1,
+      "titre": "Vue Aérienne",
+      "photo": "/images/vue-aérienne-drone.jpg"
+    }
   ]
 }
