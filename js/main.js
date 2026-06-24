@@ -123,16 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
+    const base = '/gite-sologne/_data';
     const [general, propriete, tarifs, proprietaires, galerie, activites, localisation, contact, avis] = await Promise.all([
-      fetchJSON('_data/general.json'),
-      fetchJSON('_data/propriete.json'),
-      fetchJSON('_data/tarifs.json'),
-      fetchJSON('_data/proprietaires.json'),
-      fetchJSON('_data/galerie.json'),
-      fetchJSON('_data/activites.json'),
-      fetchJSON('_data/localisation.json'),
-      fetchJSON('_data/contact.json'),
-      fetchJSON('_data/avis.json'),
+      fetchJSON(`${base}/general.json`),
+      fetchJSON(`${base}/propriete.json`),
+      fetchJSON(`${base}/tarifs.json`),
+      fetchJSON(`${base}/proprietaires.json`),
+      fetchJSON(`${base}/galerie.json`),
+      fetchJSON(`${base}/activites.json`),
+      fetchJSON(`${base}/localisation.json`),
+      fetchJSON(`${base}/contact.json`),
+      fetchJSON(`${base}/avis.json`),
     ]);
 
     applyGeneral(general);
