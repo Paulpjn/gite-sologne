@@ -856,11 +856,11 @@ table.tarifs-table {
 
 .avis-footer {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   border-top: 1px solid rgba(255,255,255,0.12);
   padding-top: 0.75rem;
-  gap: 0.5rem;
+  gap: 0.2rem;
 }
 
 .avis-auteur {
@@ -868,12 +868,21 @@ table.tarifs-table {
   color: var(--vert-tendre);
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
-.avis-date {
+.avis-meta {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.40);
   white-space: nowrap;
+}
+
+.avis-date {
+  font-size: inherit;
+  color: inherit;
 }
 
 /* ---------- SECTION LOCALISATION ---------- */
