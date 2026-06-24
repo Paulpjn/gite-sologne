@@ -5,16 +5,33 @@
   "chambres": 4,
   "surface": 150,
   "equipements": [
-    { "item": "Cuisine entièrement équipée" },
-    { "item": "Lave-vaisselle" },
-    { "item": "Lave-linge" },
-    { "item": "Wi-Fi haut débit" },
-    { "item": "Télévision 4K" },
-    { "item": "Cheminée" },
-    { "item": "Terrasse avec salon de jardin" },
-    { "item": "Barbecue" },
-    { "item": "Parking privé" },
-    { "item": "Étang privé (pêche autorisée)" }
+    {
+      "item": "Cuisine entièrement équipée"
+    },
+    {
+      "item": "Lave-vaisselle"
+    },
+    {
+      "item": "Lave-linge"
+    },
+    {
+      "item": "Wi-Fi haut débit"
+    },
+    {
+      "item": "Télévision 4K"
+    },
+    {
+      "item": "Cheminée"
+    },
+    {
+      "item": "Terrasse avec salon de jardin"
+    },
+    {
+      "item": "Parking privé"
+    },
+    {
+      "item": "Étang privé (pêche autorisée)"
+    }
   ],
   "photo": ""
 }
