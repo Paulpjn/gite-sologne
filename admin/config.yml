@@ -48,6 +48,9 @@ collections:
         label: "Tarifs & Disponibilités"
         file: "_data/tarifs.json"
         fields:
+          - { label: "Sous-titre (au-dessus du titre)", name: "eyebrow", widget: "string" }
+          - { label: "Titre de section", name: "titre", widget: "string" }
+          - { label: "Texte d'accroche", name: "accroche", widget: "text" }
           - label: "Saisons et tarifs"
             name: "saisons"
             widget: "list"
@@ -60,6 +63,12 @@ collections:
           - { label: "Caution (€)", name: "caution", widget: "number" }
           - { label: "Taxe de séjour (€/pers/nuit)", name: "taxe_sejour", widget: "number" }
           - { label: "Informations supplémentaires", name: "infos", widget: "text", required: false }
+          - label: "Informations pratiques (cards)"
+            name: "infos_pratiques"
+            widget: "list"
+            fields:
+              - { label: "Titre de la card", name: "titre", widget: "string" }
+              - { label: "Texte", name: "texte", widget: "text" }
 
       - name: "proprietaires"
         label: "Les Propriétaires"

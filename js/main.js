@@ -229,6 +229,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyTarifs(d) {
     if (!d) return;
 
+    setText('cms-tarifs-eyebrow', d.eyebrow);
+    setText('cms-tarifs-titre', d.titre);
+    setText('cms-tarifs-accroche', d.accroche);
+
     const tbody = el('cms-tarifs-tbody');
     if (tbody && Array.isArray(d.saisons) && d.saisons.length) {
       const badgeClasses = ['saison-basse', 'saison-medium', 'saison-haute'];
@@ -245,20 +249,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }).join('');
     }
 
-    if (d.caution) {
-      const cautionEl = el('cms-caution');
-      if (cautionEl) {
-        cautionEl.textContent =
-          `${d.caution} € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie.`;
-      }
-    }
-
-    if (d.taxe_sejour) {
-      const taxeEl = el('cms-taxe');
-      if (taxeEl) {
-        taxeEl.textContent =
-          `${String(d.taxe_sejour).replace('.', ',')} € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur.`;
-      }
+    const infosEl = el('cms-tarifs-infos');
+    if (infosEl && Array.isArray(d.infos_pratiques) && d.infos_pratiques.length) {
+      infosEl.innerHTML = d.infos_pratiques.map(info => `
+        <div class="info-card">
+          <h4>${info.titre}</h4>
+          <p>${info.texte}</p>
+        </div>`).join('');
     }
   }
 

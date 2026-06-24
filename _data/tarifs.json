@@ -1,4 +1,7 @@
 {
+  "eyebrow": "Tarifs & Disponibilités",
+  "titre": "Nos tarifs",
+  "accroche": "Tarifs indicatifs pour le gîte entier (10 personnes maximum)",
   "saisons": [
     {
       "nom": "Basse saison",
@@ -24,5 +27,13 @@
   ],
   "caution": 500,
   "taxe_sejour": 0.88,
-  "infos": "Les draps et serviettes sont fournis. Le ménage de fin de séjour est inclus dans le tarif. Les animaux de compagnie sont acceptés sur demande."
+  "infos": "Les draps et serviettes sont fournis. Le ménage de fin de séjour est inclus dans le tarif. Les animaux de compagnie sont acceptés sur demande.",
+  "infos_pratiques": [
+    { "titre": "Caution", "texte": "500 € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie." },
+    { "titre": "Taxe de séjour", "texte": "0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur." },
+    { "titre": "Ménage de fin de séjour", "texte": "Inclus dans les tarifs. Un état des lieux d'entrée et de sortie est réalisé en présence des locataires." },
+    { "titre": "Draps & linge", "texte": "Draps et serviettes fournis pour toutes les chambres. Linge de table disponible sur demande." },
+    { "titre": "Animaux de compagnie", "texte": "Acceptés (chiens de chasse bienvenus) avec supplément de 30 €/séjour." },
+    { "titre": "Acompte", "texte": "30 % à la réservation, solde 30 jours avant l'arrivée. Annulation gratuite jusqu'à 60 jours avant le séjour." }
+  ]
 }
