@@ -1,6 +1,3 @@
-const ICAL_URL =
-  'https://www.airbnb.fr/calendar/ical/39311402.ics?t=8ce3068020b6444baba68e4c4771c240';
-
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': 'https://paulpjn.github.io',
   'Access-Control-Allow-Methods': 'GET, OPTIONS',
@@ -8,13 +5,20 @@ const CORS_HEADERS = {
 };
 
 export default {
-  async fetch(request) {
+  async fetch(request, env) {
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: CORS_HEADERS });
     }
 
+    if (!env.ICAL_URL) {
+      return new Response(JSON.stringify({ dates: [], error: 'ICAL_URL secret non configuré' }), {
+        status: 500,
+        headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      });
+    }
+
     try {
-      const res = await fetch(ICAL_URL, {
+      const res = await fetch(env.ICAL_URL, {
         headers: { 'User-Agent': 'Mozilla/5.0' },
       });
       if (!res.ok) throw new Error(`Airbnb HTTP ${res.status}`);
