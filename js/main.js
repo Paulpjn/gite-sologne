@@ -194,7 +194,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (d.photo_hero) {
       const heroBg = document.querySelector('.hero-bg');
-      if (heroBg) heroBg.style.backgroundImage = `url('${d.photo_hero}')`;
+      if (heroBg) {
+        const heroPath = d.photo_hero.startsWith('/images/')
+          ? '/gite-sologne' + d.photo_hero
+          : d.photo_hero;
+        console.log('[CMS] photo hero :', heroPath);
+        heroBg.style.backgroundImage = `url("${heroPath}")`;
+      }
     }
 
     document.title = d.nom_gite || document.title;
