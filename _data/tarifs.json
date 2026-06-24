@@ -25,9 +25,6 @@
       "sejour_min": 7
     }
   ],
-  "caution": 500,
-  "taxe_sejour": 0.88,
-  "infos": "Les draps et serviettes sont fournis. Le ménage de fin de séjour est inclus dans le tarif. Les animaux de compagnie sont acceptés sur demande.",
   "infos_pratiques": [
     { "titre": "Caution", "texte": "500 € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie." },
     { "titre": "Taxe de séjour", "texte": "0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur." },

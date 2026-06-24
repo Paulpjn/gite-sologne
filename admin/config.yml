@@ -60,9 +60,6 @@ collections:
               - { label: "Prix par nuit (€)", name: "prix_nuit", widget: "number" }
               - { label: "Prix par semaine (€)", name: "prix_semaine", widget: "number" }
               - { label: "Séjour minimum (nuits)", name: "sejour_min", widget: "number" }
-          - { label: "Caution (€)", name: "caution", widget: "number" }
-          - { label: "Taxe de séjour (€/pers/nuit)", name: "taxe_sejour", widget: "number" }
-          - { label: "Informations supplémentaires", name: "infos", widget: "text", required: false }
           - label: "Informations pratiques (cards)"
             name: "infos_pratiques"
             widget: "list"
