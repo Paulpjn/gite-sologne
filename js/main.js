@@ -402,41 +402,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   }
 
-  /* ---- MINI CALENDRIER DISPONIBILITÉS ---- */
+  /* ---- CALENDRIER DISPONIBILITÉS (iCal Airbnb) ---- */
   const calWrap = document.getElementById('calendrier');
   if (calWrap) buildCalendar(calWrap);
 
-  function buildCalendar(container) {
-    const now = new Date();
-    const months = [];
-    for (let i = 0; i < 3; i++) {
-      const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
-      months.push(d);
-    }
+  async function buildCalendar(container) {
+    const ICAL_WORKER = 'https://gite-sologne-ical.ppajon.workers.dev';
 
-    const indisponibles = [
-      '2026-07-04','2026-07-05','2026-07-06','2026-07-07',
-      '2026-07-08','2026-07-09','2026-07-10','2026-07-11',
-      '2026-07-12','2026-07-13','2026-07-14','2026-07-15',
-      '2026-07-16','2026-07-17','2026-07-18','2026-07-19',
-      '2026-08-08','2026-08-09','2026-08-10','2026-08-11',
-      '2026-08-12','2026-08-13','2026-08-14','2026-08-15',
-      '2026-08-16','2026-08-17','2026-08-18','2026-08-19',
-      '2026-08-20','2026-08-21','2026-08-22','2026-08-23',
-    ];
+    let indisponibles = new Set();
+    try {
+      const r = await fetch(ICAL_WORKER, { cache: 'no-store' });
+      if (r.ok) {
+        const data = await r.json();
+        indisponibles = new Set(data.dates || []);
+      } else {
+        console.warn('[Calendrier] Worker iCal :', r.status);
+      }
+    } catch (e) {
+      console.warn('[Calendrier] Impossible de charger les disponibilités :', e.message);
+    }
 
     const monthNames = ['Janvier','Février','Mars','Avril','Mai','Juin',
                         'Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
     const dayNames = ['Lu','Ma','Me','Je','Ve','Sa','Di'];
 
+    const now = new Date();
     const grid = document.createElement('div');
     grid.className = 'cal-grid';
 
-    months.forEach(date => {
+    for (let i = 0; i < 12; i++) {
+      const date = new Date(now.getFullYear(), now.getMonth() + i, 1);
       const year  = date.getFullYear();
       const month = date.getMonth();
-      const firstDay = new Date(year, month, 1).getDay();
-      const offset = (firstDay + 6) % 7;
+      const offset = (new Date(year, month, 1).getDay() + 6) % 7;
       const daysInMonth = new Date(year, month + 1, 0).getDate();
 
       const monthEl = document.createElement('div');
@@ -445,7 +443,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const table = document.createElement('table');
       table.className = 'cal-table';
-
       const thead = document.createElement('thead');
       thead.innerHTML = `<tr>${dayNames.map(d => `<th>${d}</th>`).join('')}</tr>`;
       table.appendChild(thead);
@@ -454,34 +451,31 @@ document.addEventListener('DOMContentLoaded', () => {
       let row = document.createElement('tr');
       let dayCount = 0;
 
-      for (let i = 0; i < offset; i++) {
+      for (let k = 0; k < offset; k++) {
         row.appendChild(document.createElement('td'));
         dayCount++;
       }
+
+      const today = new Date(); today.setHours(0, 0, 0, 0);
 
       for (let d = 1; d <= daysInMonth; d++) {
         if (dayCount % 7 === 0 && dayCount > 0) {
           tbody.appendChild(row);
           row = document.createElement('tr');
         }
-
         const td = document.createElement('td');
         td.textContent = d;
-
-        const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+        const ymd = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
         const cellDate = new Date(year, month, d);
-        const today = new Date(); today.setHours(0,0,0,0);
-
         if (cellDate < today) {
-          td.classList.add('cal-past');
-        } else if (indisponibles.includes(dateStr)) {
-          td.classList.add('cal-indispo');
+          td.className = 'cal-past';
+        } else if (indisponibles.has(ymd)) {
+          td.className = 'cal-indispo';
           td.title = 'Indisponible';
         } else {
-          td.classList.add('cal-dispo');
+          td.className = 'cal-dispo';
           td.title = 'Disponible';
         }
-
         row.appendChild(td);
         dayCount++;
       }
@@ -494,7 +488,7 @@ document.addEventListener('DOMContentLoaded', () => {
       table.appendChild(tbody);
       monthEl.appendChild(table);
       grid.appendChild(monthEl);
-    });
+    }
 
     const legende = document.createElement('div');
     legende.className = 'cal-legende';
@@ -502,7 +496,6 @@ document.addEventListener('DOMContentLoaded', () => {
       <span class="cal-leg-item"><span class="cal-dot cal-dispo"></span> Disponible</span>
       <span class="cal-leg-item"><span class="cal-dot cal-indispo"></span> Indisponible</span>
     `;
-
     container.appendChild(grid);
     container.appendChild(legende);
   }
