@@ -391,7 +391,7 @@ p {
 
 .equipements-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 0.5rem;
   margin-top: 1.2rem;
 }
