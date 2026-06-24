@@ -31,7 +31,9 @@ collections:
         label: "La Propriété"
         file: "_data/propriete.json"
         fields:
-          - { label: "Titre de section", name: "titre", widget: "string" }
+          - { label: "Sous-titre (au-dessus du titre)", name: "eyebrow", widget: "string" }
+          - { label: "Titre principal", name: "titre", widget: "string" }
+          - { label: "Texte d'accroche (sous le titre)", name: "accroche", widget: "text" }
           - { label: "Description", name: "description", widget: "markdown" }
           - { label: "Capacité (personnes)", name: "capacite", widget: "number" }
           - { label: "Nombre de chambres", name: "chambres", widget: "number" }

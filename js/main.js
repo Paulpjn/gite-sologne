@@ -209,6 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyPropriete(d) {
     if (!d) return;
 
+    setText('cms-propriete-eyebrow', d.eyebrow);
+    setText('cms-propriete-titre', d.titre);
+    setText('cms-propriete-accroche', d.accroche);
     if (d.description) setHTML('cms-propriete-desc', md2html(d.description));
     setText('cms-capacite', d.capacite);
     setText('cms-chambres', d.chambres);

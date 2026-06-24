@@ -1,5 +1,7 @@
 {
-  "titre": "La Propriété",
+  "eyebrow": "Le gîte",
+  "titre": "Une maison de caractère au bord de l'étang",
+  "accroche": "Nichée à l'orée d'un bois de chênes centenaires, notre maison solognote vous accueille dans un cadre exceptionnel, loin de l'agitation du quotidien.",
   "description": "Le Clos de Sologne est une maison de caractère entièrement rénovée, alliant le charme de l'architecture solognote et le confort moderne. Entourée de 3 hectares de forêt et d'un étang privé, elle offre un cadre exceptionnel pour vos vacances.\n\nLa maison dispose d'une grande cuisine équipée ouverte sur le séjour, d'une terrasse ensoleillée et d'un jardin clos.",
   "capacite": 8,
   "chambres": 4,
