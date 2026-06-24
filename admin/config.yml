@@ -156,3 +156,4 @@ collections:
               - { label: "Note (sur 5)", name: "note", widget: "number", min: 1, max: 5, default: 5 }
               - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
               - { label: "Texte de l'avis", name: "texte", widget: "text" }
+              - { label: "Source (Google, Airbnb, Booking…)", name: "source", widget: "string", required: false }

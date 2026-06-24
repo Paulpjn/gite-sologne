@@ -394,7 +394,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <blockquote class="avis-texte">« ${a.texte || ''} »</blockquote>
         <footer class="avis-footer">
           <strong class="avis-auteur">${a.auteur || ''}</strong>
-          <time class="avis-date" datetime="${a.date || ''}">${dateStr}</time>
+          <span class="avis-meta">
+            <time class="avis-date" datetime="${a.date || ''}">${dateStr}</time>${a.source ? ` · ${a.source}` : ''}
+          </span>
         </footer>
       </article>`;
     }).join('');
