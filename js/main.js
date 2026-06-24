@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadCMSData() {
     async function fetchJSON(path) {
       try {
-        const r = await fetch(path);
+        const r = await fetch(path + '?v=' + Date.now(), { cache: 'no-store' });
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return await r.json();
       } catch (e) {
