@@ -112,35 +112,42 @@ document.addEventListener('DOMContentLoaded', () => {
   loadCMSData();
 
   async function loadCMSData() {
-    try {
-      const [general, propriete, tarifs, proprietaires, galerie, activites, localisation, contact, avis] = await Promise.all([
-        fetch('_data/general.json').then(r => r.json()),
-        fetch('_data/propriete.json').then(r => r.json()),
-        fetch('_data/tarifs.json').then(r => r.json()),
-        fetch('_data/proprietaires.json').then(r => r.json()),
-        fetch('_data/galerie.json').then(r => r.json()).catch(() => ({ interieur: [], exterieur: [] })),
-        fetch('_data/activites.json').then(r => r.json()).catch(() => null),
-        fetch('_data/localisation.json').then(r => r.json()).catch(() => null),
-        fetch('_data/contact.json').then(r => r.json()).catch(() => null),
-        fetch('_data/avis.json').then(r => r.json()).catch(() => null),
-      ]);
-
-      applyGeneral(general);
-      applyPropriete(propriete);
-      applyTarifs(tarifs);
-      applyProprietaires(proprietaires);
-      applyGalerie(galerie);
-      applyActivites(activites);
-      applyLocalisation(localisation);
-      applyContact(contact);
-      applyAvis(avis);
-      initGalerieTabs();
-      document.querySelectorAll('.galerie-grid .fade-in').forEach(el => observer.observe(el));
-      document.querySelectorAll('#cms-activites-grid .fade-in').forEach(el => observer.observe(el));
-      document.querySelectorAll('#cms-avis .fade-in').forEach(el => observer.observe(el));
-    } catch (e) {
-      console.warn('Données CMS non chargées :', e);
+    async function fetchJSON(path) {
+      try {
+        const r = await fetch(path);
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        return await r.json();
+      } catch (e) {
+        console.error(`[CMS] Erreur chargement ${path} :`, e.message);
+        return null;
+      }
     }
+
+    const [general, propriete, tarifs, proprietaires, galerie, activites, localisation, contact, avis] = await Promise.all([
+      fetchJSON('_data/general.json'),
+      fetchJSON('_data/propriete.json'),
+      fetchJSON('_data/tarifs.json'),
+      fetchJSON('_data/proprietaires.json'),
+      fetchJSON('_data/galerie.json'),
+      fetchJSON('_data/activites.json'),
+      fetchJSON('_data/localisation.json'),
+      fetchJSON('_data/contact.json'),
+      fetchJSON('_data/avis.json'),
+    ]);
+
+    applyGeneral(general);
+    applyPropriete(propriete);
+    applyTarifs(tarifs);
+    applyProprietaires(proprietaires);
+    applyGalerie(galerie || { interieur: [], exterieur: [] });
+    applyActivites(activites);
+    applyLocalisation(localisation);
+    applyContact(contact);
+    applyAvis(avis);
+    initGalerieTabs();
+    document.querySelectorAll('.galerie-grid .fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('#cms-activites-grid .fade-in').forEach(el => observer.observe(el));
+    document.querySelectorAll('#cms-avis .fade-in').forEach(el => observer.observe(el));
   }
 
   /* ---- HELPERS ---- */
