@@ -2,30 +2,30 @@
   "interieur": [
     {
       "ordre": 1,
-      "photo": "/images/photo1.jpg",
+      "photo": "/gite-sologne/images/photo1.jpg",
       "titre": "Salon"
     },
     {
       "ordre": 2,
-      "photo": "/images/chambre-bas1.jpg",
+      "photo": "/gite-sologne/images/chambre-bas1.jpg",
       "titre": "Chambre "
     },
     {
       "ordre": 3,
       "titre": "Chambre ",
-      "photo": "/images/chambre-haut1.jpg"
+      "photo": "/gite-sologne/images/chambre-haut1.jpg"
     }
   ],
   "exterieur": [
     {
       "ordre": 2,
-      "photo": "/images/ext.11.jpeg",
+      "photo": "/gite-sologne/images/ext.11.jpeg",
       "titre": "Entrée"
     },
     {
       "ordre": 1,
       "titre": "Vue Aérienne",
-      "photo": "/images/vue-aérienne-drone.jpg"
+      "photo": "/gite-sologne/images/vue-aérienne-drone.jpg"
     }
   ]
 }

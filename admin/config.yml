@@ -7,7 +7,7 @@ backend:
 site_url: https://paulpjn.github.io/gite-sologne
 
 media_folder: "images"
-public_folder: "/images"
+public_folder: "/gite-sologne/images"
 
 locale: fr
 
