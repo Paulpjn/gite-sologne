@@ -408,6 +408,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function buildCalendar(container) {
     const ICAL_WORKER = 'https://gite-sologne-ical.ppajon.workers.dev';
+    const PAGE_SIZE    = 3;
+    const TOTAL_MONTHS = 12;
 
     let indisponibles = new Set();
     try {
@@ -424,18 +426,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const monthNames = ['Janvier','Février','Mars','Avril','Mai','Juin',
                         'Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
-    const dayNames = ['Lu','Ma','Me','Je','Ve','Sa','Di'];
+    const dayNames   = ['Lu','Ma','Me','Je','Ve','Sa','Di'];
+    const now        = new Date();
+    let page         = 0;
 
-    const now = new Date();
-    const grid = document.createElement('div');
-    grid.className = 'cal-grid';
-
-    for (let i = 0; i < 12; i++) {
-      const date = new Date(now.getFullYear(), now.getMonth() + i, 1);
-      const year  = date.getFullYear();
-      const month = date.getMonth();
-      const offset = (new Date(year, month, 1).getDay() + 6) % 7;
+    function buildMonthEl(i) {
+      const date        = new Date(now.getFullYear(), now.getMonth() + i, 1);
+      const year        = date.getFullYear();
+      const month       = date.getMonth();
+      const startOffset = (new Date(year, month, 1).getDay() + 6) % 7;
       const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const today       = new Date(); today.setHours(0, 0, 0, 0);
 
       const monthEl = document.createElement('div');
       monthEl.className = 'cal-month';
@@ -451,13 +452,10 @@ document.addEventListener('DOMContentLoaded', () => {
       let row = document.createElement('tr');
       let dayCount = 0;
 
-      for (let k = 0; k < offset; k++) {
+      for (let k = 0; k < startOffset; k++) {
         row.appendChild(document.createElement('td'));
         dayCount++;
       }
-
-      const today = new Date(); today.setHours(0, 0, 0, 0);
-
       for (let d = 1; d <= daysInMonth; d++) {
         if (dayCount % 7 === 0 && dayCount > 0) {
           tbody.appendChild(row);
@@ -466,8 +464,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const td = document.createElement('td');
         td.textContent = d;
         const ymd = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
-        const cellDate = new Date(year, month, d);
-        if (cellDate < today) {
+        if (new Date(year, month, d) < today) {
           td.className = 'cal-past';
         } else if (indisponibles.has(ymd)) {
           td.className = 'cal-indispo';
@@ -479,7 +476,6 @@ document.addEventListener('DOMContentLoaded', () => {
         row.appendChild(td);
         dayCount++;
       }
-
       while (dayCount % 7 !== 0) {
         row.appendChild(document.createElement('td'));
         dayCount++;
@@ -487,17 +483,49 @@ document.addEventListener('DOMContentLoaded', () => {
       tbody.appendChild(row);
       table.appendChild(tbody);
       monthEl.appendChild(table);
-      grid.appendChild(monthEl);
+      return monthEl;
     }
 
-    const legende = document.createElement('div');
-    legende.className = 'cal-legende';
-    legende.innerHTML = `
-      <span class="cal-leg-item"><span class="cal-dot cal-dispo"></span> Disponible</span>
-      <span class="cal-leg-item"><span class="cal-dot cal-indispo"></span> Indisponible</span>
-    `;
-    container.appendChild(grid);
-    container.appendChild(legende);
+    function render() {
+      container.innerHTML = '';
+
+      const nav     = document.createElement('div');
+      nav.className = 'cal-nav';
+
+      const btnPrev = document.createElement('button');
+      btnPrev.className = 'cal-btn';
+      btnPrev.innerHTML = '&#8592; Précédent';
+      btnPrev.disabled  = page === 0;
+      btnPrev.addEventListener('click', () => { page--; render(); });
+
+      const btnNext = document.createElement('button');
+      btnNext.className = 'cal-btn';
+      btnNext.innerHTML = 'Suivant &#8594;';
+      btnNext.disabled  = (page + 1) * PAGE_SIZE >= TOTAL_MONTHS;
+      btnNext.addEventListener('click', () => { page++; render(); });
+
+      nav.appendChild(btnPrev);
+      nav.appendChild(btnNext);
+      container.appendChild(nav);
+
+      const grid    = document.createElement('div');
+      grid.className = 'cal-grid';
+      const start   = page * PAGE_SIZE;
+      for (let i = start; i < Math.min(start + PAGE_SIZE, TOTAL_MONTHS); i++) {
+        grid.appendChild(buildMonthEl(i));
+      }
+      container.appendChild(grid);
+
+      const legende = document.createElement('div');
+      legende.className = 'cal-legende';
+      legende.innerHTML = `
+        <span class="cal-leg-item"><span class="cal-dot cal-dispo"></span> Disponible</span>
+        <span class="cal-leg-item"><span class="cal-dot cal-indispo"></span> Indisponible</span>
+      `;
+      container.appendChild(legende);
+    }
+
+    render();
   }
 
   /* ---- FORMULAIRE NETLIFY ---- */
