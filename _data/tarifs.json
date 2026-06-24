@@ -4,13 +4,6 @@
   "accroche": "Tarifs indicatifs pour le gîte entier (10 personnes maximum)",
   "saisons": [
     {
-      "nom": "Basse saison",
-      "periode": "Novembre – Mars (hors vacances scolaires)",
-      "prix_nuit": 120,
-      "prix_semaine": 700,
-      "sejour_min": 2
-    },
-    {
       "nom": "Moyenne saison",
       "periode": "Avril – Juin et Septembre – Octobre",
       "prix_nuit": 150,
@@ -26,11 +19,29 @@
     }
   ],
   "infos_pratiques": [
-    { "titre": "Caution", "texte": "500 € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie." },
-    { "titre": "Taxe de séjour", "texte": "0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur." },
-    { "titre": "Ménage de fin de séjour", "texte": "Inclus dans les tarifs. Un état des lieux d'entrée et de sortie est réalisé en présence des locataires." },
-    { "titre": "Draps & linge", "texte": "Draps et serviettes fournis pour toutes les chambres. Linge de table disponible sur demande." },
-    { "titre": "Animaux de compagnie", "texte": "Acceptés (chiens de chasse bienvenus) avec supplément de 30 €/séjour." },
-    { "titre": "Acompte", "texte": "30 % à la réservation, solde 30 jours avant l'arrivée. Annulation gratuite jusqu'à 60 jours avant le séjour." }
+    {
+      "titre": "Caution",
+      "texte": "500 € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie."
+    },
+    {
+      "titre": "Taxe de séjour",
+      "texte": "0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur."
+    },
+    {
+      "titre": "Ménage de fin de séjour",
+      "texte": "Inclus dans les tarifs. Un état des lieux d'entrée et de sortie est réalisé en présence des locataires."
+    },
+    {
+      "titre": "Draps & linge",
+      "texte": "Draps et serviettes fournis pour toutes les chambres. Linge de table disponible sur demande."
+    },
+    {
+      "titre": "Animaux de compagnie",
+      "texte": "Acceptés (chiens de chasse bienvenus) avec supplément de 30 €/séjour."
+    },
+    {
+      "titre": "Acompte",
+      "texte": "30 % à la réservation, solde 30 jours avant l'arrivée. Annulation gratuite jusqu'à 60 jours avant le séjour."
+    }
   ]
 }
