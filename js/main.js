@@ -306,8 +306,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function applyActivites(d) {
+    if (!d) return;
+    setText('cms-activites-sous-titre', d.sous_titre);
+    setText('cms-activites-titre', d.titre);
+    setText('cms-activites-description', d.description);
     const grid = el('cms-activites-grid');
-    if (!grid || !d || !Array.isArray(d.activites) || !d.activites.length) return;
+    if (!grid || !Array.isArray(d.activites) || !d.activites.length) return;
     const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2'];
     grid.innerHTML = d.activites.map((a, i) => {
       const delay = delays[i % delays.length];
