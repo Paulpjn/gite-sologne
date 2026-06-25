@@ -57,14 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const lbPrev    = document.getElementById('lightbox-prev');
   const lbNext    = document.getElementById('lightbox-next');
 
-  let galerieItems = [];
+  let galerieItems = []; // { full, caption }[]
   let currentIndex = 0;
+  let galerieData  = {}; // tab → photos[] triés
+  let galeriePages = {}; // tab → page courante (0-based)
+  const GALERIE_PAGE = 9;
 
   const openLightbox = (index) => {
     currentIndex = index;
     const item = galerieItems[index];
-    lbImg.src = item.dataset.full || item.querySelector('img').src;
-    lbCaption.textContent = item.dataset.caption || '';
+    lbImg.src = item.full;
+    lbCaption.textContent = item.caption;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   };
@@ -83,8 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
       grid.addEventListener('click', (e) => {
         const item = e.target.closest('.galerie-item');
         if (!item) return;
-        galerieItems = [...grid.querySelectorAll('.galerie-item')];
-        openLightbox(galerieItems.indexOf(item));
+        const tab   = item.dataset.tab;
+        const index = parseInt(item.dataset.index, 10);
+        // Navigation sur toutes les photos du tab, pas seulement les visibles
+        galerieItems = (galerieData[tab] || []).map(p => ({ full: p.photo, caption: p.titre || '' }));
+        openLightbox(index);
       });
     });
   };
@@ -146,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applyContact(contact);
     applyAvis(avis);
     initGalerieTabs();
-    document.querySelectorAll('.galerie-grid .fade-in').forEach(el => observer.observe(el));
+    // Les items galerie sont observés dans renderGaleriePage
     document.querySelectorAll('#cms-activites-grid .fade-in').forEach(el => observer.observe(el));
     document.querySelectorAll('#cms-avis .fade-in').forEach(el => observer.observe(el));
   }
@@ -275,19 +281,54 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function renderGalerieGrid(gridId, photos) {
-    const grid = el(gridId);
-    if (!grid || !Array.isArray(photos) || !photos.length) return;
-    const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2', 'fade-in-delay-3'];
-    const sorted = [...photos].sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
-    grid.innerHTML = sorted.map((photo, i) => {
+    if (!Array.isArray(photos) || !photos.length) return;
+    const tab = gridId.replace('cms-galerie-', '');
+    galerieData[tab]  = [...photos].sort((a, b) => (a.ordre || 0) - (b.ordre || 0));
+    galeriePages[tab] = 0;
+    renderGaleriePage(tab);
+  }
+
+  function renderGaleriePage(tab) {
+    const grid = el(`cms-galerie-${tab}`);
+    if (!grid) return;
+    const photos    = galerieData[tab] || [];
+    const shown     = (galeriePages[tab] + 1) * GALERIE_PAGE;
+    const visible   = photos.slice(0, shown);
+    const remaining = photos.length - visible.length;
+
+    const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2'];
+    grid.innerHTML = visible.map((photo, i) => {
       const delay = delays[i % delays.length];
       return `<div class="galerie-item fade-in ${delay}" role="listitem"
                    data-full="${photo.photo}"
-                   data-caption="${photo.titre || ''}">
+                   data-caption="${photo.titre || ''}"
+                   data-tab="${tab}"
+                   data-index="${i}">
         <img src="${photo.photo}" alt="${photo.titre || ''}" loading="lazy" />
         <div class="galerie-overlay" aria-hidden="true"><span>&#128269;</span></div>
       </div>`;
     }).join('');
+
+    grid.querySelectorAll('.fade-in:not(.visible)').forEach(node => observer.observe(node));
+
+    // Bouton "Voir plus" inséré juste après la grille
+    const wrapId = `galerie-voir-plus-${tab}`;
+    let wrap = el(wrapId);
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.id = wrapId;
+      wrap.className = 'galerie-voir-plus-wrap';
+      grid.insertAdjacentElement('afterend', wrap);
+    }
+    if (remaining > 0) {
+      const btn = document.createElement('button');
+      btn.className = 'galerie-voir-plus-btn';
+      btn.textContent = `Voir plus · ${remaining} photo${remaining > 1 ? 's' : ''}`;
+      btn.addEventListener('click', () => { galeriePages[tab]++; renderGaleriePage(tab); });
+      wrap.replaceChildren(btn);
+    } else {
+      wrap.replaceChildren();
+    }
   }
 
   function initGalerieTabs() {
