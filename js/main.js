@@ -331,6 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyLocalisation(d) {
     if (!d) return;
     if (d.description) setText('cms-loc-description', d.description);
+    if (d.adresse) setHTML('cms-loc-adresse', d.adresse.replace(/\n/g, '<br>'));
     if (d.latitude && d.longitude) {
       const lat = parseFloat(d.latitude);
       const lon = parseFloat(d.longitude);
@@ -370,10 +371,6 @@ document.addEventListener('DOMContentLoaded', () => {
           node.href = 'mailto:' + d.email;
         }
       });
-    }
-
-    if (d.adresse) {
-      setHTML('cms-loc-adresse', d.adresse.replace(/\n/g, '<br>'));
     }
 
     if (d.message_accueil) setText('cms-contact-message', d.message_accueil);
