@@ -358,24 +358,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (d.sous_titre !== undefined) setText('cms-contact-sous-titre', d.sous_titre);
     if (d.titre !== undefined) setText('cms-contact-titre', d.titre);
-
-    const tel = el('cms-contact-tel');
-    if (tel) {
-      tel.textContent = d.telephone || '';
-      tel.href = d.telephone ? 'tel:' + d.telephone.replace(/\s/g, '') : '';
-    }
-
-    [el('cms-contact-email'), el('cms-footer-email')].forEach(node => {
-      if (node) {
-        node.textContent = d.email || '';
-        node.href = d.email ? 'mailto:' + d.email : '';
-      }
-    });
-
     if (d.message_accueil) setText('cms-contact-message', d.message_accueil);
-    if (d.horaires) setText('cms-contact-horaires', d.horaires);
-    if (d.heure_arrivee) setText('cms-contact-arrivee', d.heure_arrivee);
-    if (d.heure_depart) setText('cms-contact-depart', d.heure_depart);
+
+    const infosEl = el('cms-contact-infos');
+    if (infosEl && Array.isArray(d.infos)) {
+      infosEl.innerHTML = d.infos.map(info => `
+        <div class="contact-item">
+          <span class="contact-item-icon" aria-hidden="true">${info.icone || ''}</span>
+          <div>
+            <strong>${info.titre || ''}</strong>
+            <span>${(info.texte || '').replace(/\n/g, '<br>')}</span>
+          </div>
+        </div>`).join('');
+
+      // Met à jour le lien email du footer si un item contient une adresse email
+      const emailInfo = d.infos.find(i => i.texte && i.texte.includes('@'));
+      const footerEmail = el('cms-footer-email');
+      if (footerEmail && emailInfo) {
+        footerEmail.textContent = emailInfo.texte;
+        footerEmail.href = 'mailto:' + emailInfo.texte.trim();
+      }
+    }
   }
 
   function applyAvis(d) {

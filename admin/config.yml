@@ -114,13 +114,14 @@ collections:
         fields:
           - { label: "Sous-titre", name: "sous_titre", widget: "string" }
           - { label: "Titre de section", name: "titre", widget: "string" }
-          - { label: "Email de contact", name: "email", widget: "string" }
-          - { label: "Téléphone", name: "telephone", widget: "string" }
-          - { label: "Adresse", name: "adresse", widget: "text" }
           - { label: "Message d'accueil", name: "message_accueil", widget: "text" }
-          - { label: "Horaires de disponibilité", name: "horaires", widget: "string" }
-          - { label: "Heure d'arrivée", name: "heure_arrivee", widget: "string" }
-          - { label: "Heure de départ", name: "heure_depart", widget: "string" }
+          - label: "Informations de contact"
+            name: "infos"
+            widget: "list"
+            fields:
+              - { label: "Icône (emoji)", name: "icone", widget: "string" }
+              - { label: "Titre", name: "titre", widget: "string" }
+              - { label: "Texte", name: "texte", widget: "text" }
 
   - name: "galerie"
     label: "Galerie Photos"
