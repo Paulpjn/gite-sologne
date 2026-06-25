@@ -356,22 +356,21 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyContact(d) {
     if (!d) return;
 
-    if (d.telephone) {
-      const tel = el('cms-contact-tel');
-      if (tel) {
-        tel.textContent = d.telephone;
-        tel.href = 'tel:' + d.telephone.replace(/\s/g, '');
-      }
+    if (d.sous_titre !== undefined) setText('cms-contact-sous-titre', d.sous_titre);
+    if (d.titre !== undefined) setText('cms-contact-titre', d.titre);
+
+    const tel = el('cms-contact-tel');
+    if (tel) {
+      tel.textContent = d.telephone || '';
+      tel.href = d.telephone ? 'tel:' + d.telephone.replace(/\s/g, '') : '';
     }
 
-    if (d.email) {
-      [el('cms-contact-email'), el('cms-footer-email')].forEach(node => {
-        if (node) {
-          node.textContent = d.email;
-          node.href = 'mailto:' + d.email;
-        }
-      });
-    }
+    [el('cms-contact-email'), el('cms-footer-email')].forEach(node => {
+      if (node) {
+        node.textContent = d.email || '';
+        node.href = d.email ? 'mailto:' + d.email : '';
+      }
+    });
 
     if (d.message_accueil) setText('cms-contact-message', d.message_accueil);
     if (d.horaires) setText('cms-contact-horaires', d.horaires);

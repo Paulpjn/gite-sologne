@@ -112,6 +112,8 @@ collections:
         label: "Contact"
         file: "_data/contact.json"
         fields:
+          - { label: "Sous-titre", name: "sous_titre", widget: "string" }
+          - { label: "Titre de section", name: "titre", widget: "string" }
           - { label: "Email de contact", name: "email", widget: "string" }
           - { label: "Téléphone", name: "telephone", widget: "string" }
           - { label: "Adresse", name: "adresse", widget: "text" }
