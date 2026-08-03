@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Mentions légales — Gîte des Étangs de Sologne" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Mentions légales — Gîte des Étangs de Sologne</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ---- Page mentions légales ---- */
+    .ml-header {
+      background: var(--vert-foret);
+      padding: 6rem 1.5rem 3.5rem;
+      text-align: center;
+      color: var(--blanc);
+    }
+
+    .ml-header h1 {
+      font-family: var(--font-titre);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--blanc);
+      margin-bottom: 0.5rem;
+    }
+
+    .ml-header p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.65);
+      margin: 0;
+    }
+
+    .ml-body {
+      background: var(--lin);
+      padding: clamp(2.5rem, 5vw, 4rem) 1.5rem;
+    }
+
+    .ml-inner {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    .ml-section {
+      background: var(--blanc);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .ml-section h2 {
+      font-size: 1.05rem;
+      font-family: var(--font-corps);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--vert-tendre);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--lin);
+    }
+
+    .ml-section p,
+    .ml-section li {
+      font-size: 0.95rem;
+      color: var(--texte-clair);
+      margin-bottom: 0.6rem;
+      line-height: 1.65;
+    }
+
+    .ml-section li { margin-bottom: 0.4rem; }
+
+    .ml-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ml-section ul li::before {
+      content: '—';
+      color: var(--vert-tendre);
+      margin-right: 0.6rem;
+      font-weight: 700;
+    }
+
+    .ml-section strong {
+      color: var(--vert-foret);
+      font-weight: 700;
+    }
+
+    .ml-section a {
+      color: var(--vert-foret);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .ml-section a:hover { color: var(--vert-tendre); }
+
+    .ml-back {
+      text-align: center;
+      padding: 1.5rem 1.5rem 3rem;
+      background: var(--lin);
+    }
+
+    @media (max-width: 479px) {
+      .ml-section { padding: 1.5rem 1.25rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <a href="index.html" class="nav-logo">Les Étangs de Sologne</a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#propriete">La Propriété</a>
+      <a href="index.html#galerie">Galerie</a>
+      <a href="index.html#tarifs">Tarifs</a>
+      <a href="index.html#activites">Activités</a>
+      <a href="index.html#avis">Avis</a>
+      <a href="index.html#localisation">Localisation</a>
+      <a href="index.html#contact" class="btn btn-primary">Réserver</a>
+    </div>
+
+    <button class="nav-burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- EN-TÊTE -->
+  <header class="ml-header">
+    <h1>Mentions légales</h1>
+    <p>Conformément aux articles 6-III et 19 de la Loi n°2004-575 du 21 juin 2004</p>
+  </header>
+
+  <!-- CONTENU -->
+  <main class="ml-body">
+    <div class="ml-inner">
+
+      <!-- Éditeur -->
+      <section class="ml-section">
+        <h2>Éditeur du site</h2>
+        <ul>
+          <li><strong>Nom :</strong> Nathalie et Bertrand Pajon</li>
+          <li><strong>Adresse :</strong> 2866 Rue de la Ferté, 45370 Jouy-le-Potier</li>
+          <li><strong>Email :</strong> <a href="mailto:[À COMPLÉTER]">[À COMPLÉTER]</a></li>
+          <li><strong>Téléphone :</strong> [À COMPLÉTER]</li>
+          <li><strong>Statut :</strong> Particulier</li>
+        </ul>
+      </section>
+
+      <!-- Hébergeur -->
+      <section class="ml-section">
+        <h2>Hébergeur</h2>
+        <ul>
+          <li><strong>Service :</strong> GitHub Pages</li>
+          <li><strong>Société :</strong> Microsoft Corporation</li>
+          <li><strong>Adresse :</strong> One Microsoft Way, Redmond, WA 98052, États-Unis</li>
+          <li><strong>Site web :</strong> <a href="https://pages.github.com" target="_blank" rel="noopener noreferrer">pages.github.com</a></li>
+        </ul>
+      </section>
+
+      <!-- Données personnelles -->
+      <section class="ml-section">
+        <h2>Données personnelles (RGPD)</h2>
+        <p>
+          Conformément au Règlement Général sur la Protection des Données (RGPD) — Règlement (UE) 2016/679 — et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et de suppression de vos données.
+        </p>
+        <ul>
+          <li>Les données collectées via le formulaire de contact (nom, prénom, email, téléphone, dates de séjour) sont utilisées <strong>uniquement pour traiter les demandes de réservation</strong>.</li>
+          <li>Elles sont transmises et conservées sur le service <strong>Formspree</strong> pendant une durée maximale de <strong>30 jours</strong>.</li>
+          <li>Elles ne sont ni revendues, ni transmises à des tiers à des fins commerciales.</li>
+          <li>Pour exercer vos droits (accès, rectification, suppression), contactez-nous par email : <a href="mailto:[À COMPLÉTER]">[À COMPLÉTER]</a></li>
+        </ul>
+        <p style="margin-top:1rem;margin-bottom:0">
+          Pour toute réclamation, vous pouvez également vous adresser à la <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">CNIL</a>.
+        </p>
+      </section>
+
+      <!-- Cookies -->
+      <section class="ml-section">
+        <h2>Cookies</h2>
+        <p>
+          Ce site <strong>n'utilise aucun cookie de tracking</strong> ni de mesure d'audience. Aucune donnée de navigation n'est collectée à des fins analytiques ou publicitaires.
+        </p>
+      </section>
+
+      <!-- Propriété intellectuelle -->
+      <section class="ml-section">
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L'ensemble du contenu de ce site (textes, photographies, structure) est la propriété de Nathalie et Bertrand Pajon, sauf mention contraire. Toute reproduction ou diffusion sans autorisation préalable est interdite.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <div class="ml-back">
+    <a href="index.html" class="btn btn-primary">← Retour au site</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Les Étangs de Sologne</div>
+      <div class="footer-links">
+        <a href="index.html#propriete">La Propriété</a>
+        <a href="index.html#galerie">Galerie</a>
+        <a href="index.html#tarifs">Tarifs</a>
+        <a href="index.html#activites">Activités</a>
+        <a href="index.html#avis">Avis</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="mentions-legales.html" aria-current="page">Mentions légales</a>
+      </div>
+      <p style="margin:0;font-size:0.8rem">
+        &copy; 2026 Les Étangs de Sologne &mdash;
+        2866 Rue de la Ferté, 45370 Jouy-le-Potier
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar sticky + burger (autonome, sans dépendance à main.js)
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    const burger   = document.querySelector('.nav-burger');
+    const navLinks = document.querySelector('.nav-links');
+    if (burger && navLinks) {
+      burger.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        burger.classList.toggle('active', open);
+        burger.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          burger.classList.remove('active');
+          burger.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
