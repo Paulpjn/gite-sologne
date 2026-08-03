@@ -558,10 +558,22 @@
                      placeholder="marie.dupont@email.fr" autocomplete="email" required />
             </div>
 
-            <div class="form-group">
-              <label for="telephone">Téléphone</label>
-              <input type="tel" id="telephone" name="telephone"
-                     placeholder="06 XX XX XX XX" autocomplete="tel" />
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone"
+                       placeholder="06 XX XX XX XX" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="nb-personnes">Nombre de personnes *</label>
+                <select id="nb-personnes" name="nb_personnes" required>
+                  <option value="">Choisir...</option>
+                  <option value="1">1 personne</option>
+                  <option value="2">2 personnes</option>
+                  <option value="3">3 personnes</option>
+                  <option value="4">4 personnes</option>
+                </select>
+              </div>
             </div>
 
             <div class="form-row">
@@ -576,19 +588,8 @@
             </div>
 
             <div class="form-group">
-              <label for="nb-personnes">Nombre de personnes *</label>
-              <select id="nb-personnes" name="nb_personnes" required>
-                <option value="">Choisir...</option>
-                <option value="1">1 personne</option>
-                <option value="2">2 personnes</option>
-                <option value="3">3 personnes</option>
-                <option value="4">4 personnes</option>
-              </select>
-            </div>
-
-            <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message"
+              <textarea id="message" name="message" rows="4"
                         placeholder="Dites-nous en plus sur votre projet de séjour, vos besoins particuliers, vos questions…"></textarea>
             </div>
 

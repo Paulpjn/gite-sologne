@@ -981,6 +981,35 @@ table.tarifs-table {
 
 @media (min-width: 768px) {
   .contact-layout { grid-template-columns: 1fr 1.6fr; }
+
+  /* --- Contact : compactage desktop --- */
+  #contact {
+    padding: clamp(2rem, 4vw, 3.5rem) 1.5rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.6rem;
+  }
+
+  .form-row {
+    gap: 0.65rem;
+    margin-bottom: 0.6rem;
+  }
+
+  #contact textarea {
+    min-height: 80px;
+  }
+
+  /* --- Colonne infos : sticky pendant le remplissage --- */
+  .contact-infos {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+  }
 }
 
 .contact-infos {
