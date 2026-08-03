@@ -1369,3 +1369,56 @@ footer a:hover { opacity: 0.8; }
 .saison-haute  { background: #e8b84b22; color: #e8b84b; }
 .saison-medium { background: #8FB87A22; color: #8FB87A; }
 .saison-basse  { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+
+/* ============================================================
+   RESPONSIVE MOBILE — cible 375 px (max-width: 479px)
+   ============================================================ */
+@media (max-width: 479px) {
+
+  /* --- NAVIGATION --- */
+  #navbar          { padding: 0.75rem 1rem; }
+  #navbar.scrolled { padding: 0.45rem 1rem; }
+  .nav-logo        { font-size: 1.05rem; }
+
+  /* --- HERO --- */
+  .hero-content h1 {
+    font-size: clamp(1.75rem, 9vw, 2.2rem);
+  }
+  .hero-content p { font-size: 0.92rem; }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* --- PROPRIÉTÉ --- */
+  .propriete-grid       { gap: 1.5rem; }
+  .propriete-stats      { grid-template-columns: repeat(2, 1fr); }
+  .stat-item .stat-num  { font-size: 1.6rem; }
+  .equipements-list     { grid-template-columns: 1fr; }
+
+  /* --- GALERIE --- */
+  .galerie-tabs { flex-wrap: wrap; gap: 0.5rem; }
+  .galerie-tab  { font-size: 0.85rem; padding: 0.45rem 1.1rem; }
+
+  /* --- TARIFS : tableau --- */
+  .tarifs-table th,
+  .tarifs-table td { padding: 0.5rem 0.4rem; font-size: 0.78rem; }
+  .prix-highlight  { font-size: 1rem; }
+  .info-card       { padding: 1rem; }
+
+  /* --- LOCALISATION --- */
+  .carte-wrap { height: 260px; }
+
+  /* --- CONTACT --- */
+  .contact-layout { gap: 2rem; }
+  .contact-form   { padding: 1.25rem 1rem; }
+
+  /* --- FOOTER --- */
+  .footer-links { gap: 0.75rem; font-size: 0.82rem; }
+}
