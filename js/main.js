@@ -572,26 +572,43 @@ document.addEventListener('DOMContentLoaded', () => {
     render();
   }
 
-  /* ---- FORMULAIRE NETLIFY ---- */
+  /* ---- FORMULAIRE FORMSPREE ---- */
   const form = document.getElementById('contact-form');
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const submitBtn = document.getElementById('form-submit-btn');
+      const errorDiv = document.getElementById('form-error');
+
+      errorDiv.style.display = 'none';
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
+
       const data = new FormData(form);
+      const payload = Object.fromEntries(data.entries());
+      delete payload.rgpd;
+
       try {
-        const res = await fetch('/', {
+        const res = await fetch('https://formspree.io/f/mbdnnwwj', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(data).toString(),
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
         });
         if (res.ok) {
           form.style.display = 'none';
           document.getElementById('form-success').style.display = 'block';
         } else {
-          alert('Une erreur est survenue. Merci de réessayer ou de nous contacter par téléphone.');
+          const json = await res.json().catch(() => ({}));
+          errorDiv.textContent = json.error || 'Une erreur est survenue. Merci de réessayer ou de nous contacter par téléphone.';
+          errorDiv.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Envoyer ma demande →';
         }
       } catch {
-        alert('Impossible d\'envoyer le message. Vérifiez votre connexion.');
+        errorDiv.textContent = 'Impossible d\'envoyer le message. Vérifiez votre connexion.';
+        errorDiv.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Envoyer ma demande →';
       }
     });
   }
