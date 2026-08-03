@@ -980,11 +980,18 @@ table.tarifs-table {
 }
 
 @media (min-width: 768px) {
-  .contact-layout { grid-template-columns: 1fr 1.6fr; }
+  .contact-layout {
+    grid-template-columns: 1fr 1.6fr;
+    align-items: start;
+  }
 
   /* --- Contact : compactage desktop --- */
   #contact {
     padding: clamp(2rem, 4vw, 3.5rem) 1.5rem;
+  }
+
+  #contact .section-header {
+    margin-bottom: 1.2rem;
   }
 
   .contact-form {
@@ -1004,12 +1011,23 @@ table.tarifs-table {
     min-height: 80px;
   }
 
-  /* --- Colonne infos : sticky pendant le remplissage --- */
-  .contact-infos {
+  /* --- Colonne gauche : sticky pendant le remplissage --- */
+  .contact-left {
     position: sticky;
     top: 100px;
     align-self: start;
   }
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-message-lead {
+  margin: 0;
+  line-height: 1.65;
 }
 
 .contact-infos {
