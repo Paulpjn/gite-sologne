@@ -31,5 +31,31 @@
       "photo": "/gite-sologne/images/chambre-bas2.jpg"
     }
   ],
-  "exterieur": []
+  "exterieur": [
+    {
+      "ordre": 1,
+      "photo": "/gite-sologne/images/ext.11.jpeg",
+      "titre": "Entrée"
+    },
+    {
+      "ordre": 2,
+      "photo": "/gite-sologne/images/terrasse4.jpg",
+      "titre": "Terrasse"
+    },
+    {
+      "ordre": 3,
+      "photo": "/gite-sologne/images/terrasse1.jpg",
+      "titre": "Terrasse"
+    },
+    {
+      "ordre": 4,
+      "photo": "/gite-sologne/images/ext.12.jpg",
+      "titre": "Etang"
+    },
+    {
+      "ordre": 5,
+      "photo": "/gite-sologne/images/ext.4.jpg",
+      "titre": "Forêt"
+    }
+  ]
 }
