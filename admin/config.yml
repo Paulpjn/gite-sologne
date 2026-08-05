@@ -87,7 +87,23 @@ collections:
             name: "activites"
             widget: "list"
             fields:
-              - { label: "Icône (emoji)", name: "icone", widget: "string" }
+              - label: "Icône (emoji)"
+                name: "icone"
+                widget: "select"
+                options:
+                  - { label: "🎣 Pêche", value: "🎣" }
+                  - { label: "🦌 Chasse", value: "🦌" }
+                  - { label: "🚴 Vélo", value: "🚴" }
+                  - { label: "🌿 Nature", value: "🌿" }
+                  - { label: "🏊 Natation", value: "🏊" }
+                  - { label: "🍄 Cueillette", value: "🍄" }
+                  - { label: "🏰 Château", value: "🏰" }
+                  - { label: "🛶 Canoë", value: "🛶" }
+                  - { label: "🐦 Observation oiseaux", value: "🐦" }
+                  - { label: "🌅 Randonnée", value: "🌅" }
+                  - { label: "🍷 Gastronomie", value: "🍷" }
+                  - { label: "🎨 Culture", value: "🎨" }
+                  - { label: "⛳ Golf", value: "⛳" }
               - { label: "Titre", name: "titre", widget: "string" }
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
@@ -104,7 +120,16 @@ collections:
             name: "distances"
             widget: "list"
             fields:
-              - { label: "Icône (emoji)", name: "icone", widget: "string" }
+              - label: "Icône (emoji)"
+                name: "icone"
+                widget: "select"
+                options:
+                  - { label: "🚗 Voiture", value: "🚗" }
+                  - { label: "🚂 Train", value: "🚂" }
+                  - { label: "🚌 Bus", value: "🚌" }
+                  - { label: "✈️ Avion", value: "✈️" }
+                  - { label: "🚲 Vélo", value: "🚲" }
+                  - { label: "🚶 À pied", value: "🚶" }
               - { label: "Mode de transport", name: "label", widget: "string" }
               - { label: "Détail", name: "detail", widget: "text" }
 
