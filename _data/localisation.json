@@ -7,7 +7,12 @@
     {
       "icone": "🚗",
       "label": "En voiture",
-      "detail": "Paris A71 → sortie Lamotte-Beuvron (1h45)\nTours : 1h00 · Orléans : 45 min"
+      "detail": " A71 → sortie Lamotte-Beuvron en venant du sud ou sortie Orleans-Sud en venant du Nord.\nTours : 1h00 · \nOrléans : 25 min"
+    },
+    {
+      "icone": "...",
+      "label": "Train",
+      "detail": "Gares les plus proches :\n-"
     }
   ]
 }
