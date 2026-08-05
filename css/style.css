@@ -363,8 +363,13 @@ p {
 }
 
 @media (min-width: 768px) {
+  #propriete .section-inner {
+    max-width: 1200px;
+  }
+
   .propriete-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: start;
   }
 }
 
