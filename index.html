@@ -184,8 +184,20 @@
                 role="tab" aria-selected="false" aria-controls="cms-galerie-exterieur">Extérieur</button>
       </div>
 
-      <div class="galerie-grid" id="cms-galerie-interieur" role="list"></div>
-      <div class="galerie-grid galerie-hidden" id="cms-galerie-exterieur" role="list"></div>
+      <div class="galerie-carousel" id="cms-galerie-interieur-wrap">
+        <button class="galerie-arrow galerie-arrow-prev" type="button" aria-label="Photos précédentes">&#8249;</button>
+        <div class="galerie-viewport">
+          <div class="galerie-track" id="cms-galerie-interieur" role="list"></div>
+        </div>
+        <button class="galerie-arrow galerie-arrow-next" type="button" aria-label="Photos suivantes">&#8250;</button>
+      </div>
+      <div class="galerie-carousel galerie-hidden" id="cms-galerie-exterieur-wrap">
+        <button class="galerie-arrow galerie-arrow-prev" type="button" aria-label="Photos précédentes">&#8249;</button>
+        <div class="galerie-viewport">
+          <div class="galerie-track" id="cms-galerie-exterieur" role="list"></div>
+        </div>
+        <button class="galerie-arrow galerie-arrow-next" type="button" aria-label="Photos suivantes">&#8250;</button>
+      </div>
     </div>
   </section>
 

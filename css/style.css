@@ -470,41 +470,63 @@ p {
   display: none !important;
 }
 
-.galerie-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.75rem;
+.galerie-carousel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   margin-top: 2.5rem;
+  --visible: 1;
 }
 
 @media (min-width: 600px) {
-  .galerie-grid { grid-template-columns: repeat(3, 1fr); }
+  .galerie-carousel { --visible: 3; }
 }
 
-.galerie-voir-plus-wrap {
-  text-align: center;
-  margin-top: 1.5rem;
+.galerie-viewport {
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
 }
 
-.galerie-hidden + .galerie-voir-plus-wrap {
-  display: none !important;
+.galerie-track {
+  display: flex;
+  gap: 0.75rem;
+  transition: transform 0.4s ease;
 }
 
-.galerie-voir-plus-btn {
-  background: transparent;
+.galerie-track .galerie-item {
+  flex: 0 0 calc((100% - (var(--visible) - 1) * 0.75rem) / var(--visible));
+}
+
+.galerie-arrow {
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
   border: 2px solid var(--vert-foret);
+  background: var(--blanc);
   color: var(--vert-foret);
-  padding: 0.6rem 2rem;
-  border-radius: var(--radius);
-  font-family: var(--font-corps);
-  font-size: 0.9rem;
+  font-size: 1.5rem;
+  line-height: 1;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition), opacity var(--transition);
 }
 
-.galerie-voir-plus-btn:hover {
+.galerie-arrow:hover:not(:disabled) {
   background: var(--vert-foret);
   color: var(--blanc);
+}
+
+.galerie-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.galerie-carousel--no-nav .galerie-arrow {
+  visibility: hidden;
 }
 
 .galerie-item {
@@ -1479,6 +1501,8 @@ footer a:hover { opacity: 0.8; }
   /* --- GALERIE --- */
   .galerie-tabs { flex-wrap: wrap; gap: 0.5rem; }
   .galerie-tab  { font-size: 0.85rem; padding: 0.45rem 1.1rem; }
+  .galerie-carousel { gap: 0.35rem; }
+  .galerie-arrow     { width: 2.25rem; height: 2.25rem; font-size: 1.25rem; }
 
   /* --- TARIFS : tableau --- */
   .tarifs-table th,
