@@ -1,4 +1,15 @@
 {
-  "interieur": [],
+  "interieur": [
+    {
+      "ordre": 1,
+      "titre": "La pièce à vivre",
+      "photo": "/gite-sologne/images/photo1.jpg"
+    },
+    {
+      "ordre": 1,
+      "titre": "La pièce à vivre",
+      "photo": "/gite-sologne/images/salon1.jpg"
+    }
+  ],
   "exterieur": []
 }
