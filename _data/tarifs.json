@@ -1,47 +1,47 @@
 {
   "eyebrow": "Tarifs & Disponibilités",
   "titre": "Nos tarifs",
-  "accroche": "Tarifs indicatifs pour le gîte entier (10 personnes maximum)",
+  "accroche": "Tarifs indicatifs pour le gîte entier (4 personnes maximum)",
   "saisons": [
     {
-      "nom": "Moyenne saison",
-      "periode": "Avril – Juin et Septembre – Octobre",
-      "prix_nuit": 150,
-      "prix_semaine": 900,
-      "sejour_min": 3
+      "nom": "Basse saison",
+      "periode": "Octobre - Novembre - Décembre - Janvier - Février - Mars",
+      "prix_nuit": 125,
+      "prix_semaine": 675,
+      "sejour_min": 2
     },
     {
       "nom": "Haute saison",
-      "periode": "Juillet – Août et vacances scolaires",
-      "prix_nuit": 190,
-      "prix_semaine": 1200,
-      "sejour_min": 7
+      "periode": "Avril - Mai - Juin - Juillet - Août - Septembre",
+      "prix_nuit": 140,
+      "prix_semaine": 750,
+      "sejour_min": 2
     }
   ],
   "infos_pratiques": [
     {
       "titre": "Caution",
-      "texte": "500 € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie."
+      "texte": "650 € par chèque ou virement, restitués sous 7 jours après l'état des lieux de sortie."
     },
     {
       "titre": "Taxe de séjour",
-      "texte": "0,88 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur."
+      "texte": "1,32 € par personne et par nuit (adultes), conformément aux tarifs communaux en vigueur."
     },
     {
       "titre": "Ménage de fin de séjour",
-      "texte": "Inclus dans les tarifs. Un état des lieux d'entrée et de sortie est réalisé en présence des locataires."
+      "texte": "Un forfait \"Entretien-Ménage\" vous sera demandé (à la réservation ou lors de votre départ). Il s'élève à 60 €. Un état des lieux d'entrée et de sortie est réalisé en présence des locataires."
     },
     {
       "titre": "Draps & linge",
-      "texte": "Draps et serviettes fournis pour toutes les chambres. Linge de table disponible sur demande."
+      "texte": "Linge de lit et de toilette fourni. Lits faits à votre arrivée."
     },
     {
       "titre": "Animaux de compagnie",
-      "texte": "Acceptés (chiens de chasse bienvenus) avec supplément de 30 €/séjour."
+      "texte": "Les animaux de compagnie ne sont pas acceptés."
     },
     {
       "titre": "Acompte",
-      "texte": "30 % à la réservation, solde 30 jours avant l'arrivée. Annulation gratuite jusqu'à 60 jours avant le séjour."
+      "texte": "- Un acompte de 25% est demandé à la réservation.\n- Le solde est à régler 15 jours avant votre arrivée.\n- En cas d'annulation : l'acompte reste acquis.\n- Pour une réservation effectuée moins de 15 jours avant le début du séjour : 100% du montant doit être réglé à la réservation. Ce montant ne sera pas restitué en cas d'annulation.."
     }
   ]
 }
