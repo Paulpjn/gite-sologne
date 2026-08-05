@@ -9,6 +9,26 @@
       "ordre": 2,
       "titre": "Le salon",
       "photo": "/gite-sologne/images/salon1.jpg"
+    },
+    {
+      "ordre": 1,
+      "photo": "/gite-sologne/images/salon2.jpg",
+      "titre": "Le salon"
+    },
+    {
+      "ordre": 4,
+      "photo": "/gite-sologne/images/cuisine1.jpg",
+      "titre": "La cuisine"
+    },
+    {
+      "ordre": 5,
+      "photo": "/gite-sologne/images/chambre-bas1.jpg",
+      "titre": "Chambre du bas"
+    },
+    {
+      "ordre": 6,
+      "titre": "Chambre du bas",
+      "photo": "/gite-sologne/images/chambre-bas2.jpg"
     }
   ],
   "exterieur": []
