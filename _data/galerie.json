@@ -56,6 +56,11 @@
       "ordre": 5,
       "photo": "/gite-sologne/images/ext.4.jpg",
       "titre": "Forêt"
+    },
+    {
+      "ordre": 6,
+      "titre": "Etang de pêche",
+      "photo": "/gite-sologne/images/img_7116.jpeg"
     }
   ]
 }
