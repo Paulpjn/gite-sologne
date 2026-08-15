@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyGeneral(d) {
     if (!d) return;
 
-    [el('cms-nom-gite'), el('cms-footer-nom')].forEach(node => {
+    [el('cms-nom-gite'), el('cms-footer-nom'), el('cms-footer-nom-copy')].forEach(node => {
       if (node) node.textContent = d.nom_gite;
     });
 
@@ -433,6 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (d.sous_titre !== undefined) setText('cms-contact-sous-titre', d.sous_titre);
     if (d.titre !== undefined) setText('cms-contact-titre', d.titre);
     if (d.message_accueil) setText('cms-contact-message', d.message_accueil);
+    if (d.adresse) setText('cms-footer-adresse', d.adresse);
 
     const infosEl = el('cms-contact-infos');
     if (infosEl && Array.isArray(d.infos)) {

@@ -140,6 +140,7 @@ collections:
           - { label: "Sous-titre", name: "sous_titre", widget: "string" }
           - { label: "Titre de section", name: "titre", widget: "string" }
           - { label: "Message d'accueil", name: "message_accueil", widget: "text" }
+          - { label: "Adresse (pied de page)", name: "adresse", widget: "string" }
           - label: "Informations de contact"
             name: "infos"
             widget: "list"
