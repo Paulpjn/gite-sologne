@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    const base = '/gite-sologne/_data';
+    const base = '/_data';
     const [general, propriete, tarifs, proprietaires, galerie, activites, localisation, contact, avis] = await Promise.all([
       fetchJSON(`${base}/general.json`),
       fetchJSON(`${base}/propriete.json`),
@@ -205,9 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (d.photo_hero) {
       const heroBg = document.querySelector('.hero-bg');
       if (heroBg) {
-        const heroPath = d.photo_hero.startsWith('/images/')
-          ? '/gite-sologne' + d.photo_hero
-          : d.photo_hero;
+        const heroPath = d.photo_hero.replace('/gite-sologne/images/', '/images/');
         console.log('[CMS] photo hero :', heroPath);
         heroBg.style.backgroundImage = `url("${heroPath}")`;
       }

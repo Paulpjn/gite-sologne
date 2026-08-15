@@ -3,94 +3,94 @@
     {
       "ordre": 1,
       "titre": "La pièce à vivre",
-      "photo": "/gite-sologne/images/photo1.jpg"
+      "photo": "/images/photo1.jpg"
     },
     {
       "ordre": 2,
       "titre": "Le salon",
-      "photo": "/gite-sologne/images/salon1.jpg"
+      "photo": "/images/salon1.jpg"
     },
     {
       "ordre": 1,
-      "photo": "/gite-sologne/images/salon2.jpg",
+      "photo": "/images/salon2.jpg",
       "titre": "Le salon"
     },
     {
       "ordre": 4,
-      "photo": "/gite-sologne/images/cuisine1.jpg",
+      "photo": "/images/cuisine1.jpg",
       "titre": "La cuisine"
     },
     {
       "ordre": 5,
-      "photo": "/gite-sologne/images/chambre-bas1.jpg",
+      "photo": "/images/chambre-bas1.jpg",
       "titre": "Chambre du bas"
     },
     {
       "ordre": 6,
       "titre": "Chambre du bas",
-      "photo": "/gite-sologne/images/chambre-bas2.jpg"
+      "photo": "/images/chambre-bas2.jpg"
     },
     {
       "ordre": 7,
       "titre": "Sale de bain (chambre du bas)",
-      "photo": "/gite-sologne/images/sdb-bas2.jpg"
+      "photo": "/images/sdb-bas2.jpg"
     },
     {
       "ordre": 8,
-      "photo": "/gite-sologne/images/chambre-haut1.jpg",
+      "photo": "/images/chambre-haut1.jpg",
       "titre": "Chambre du haut"
     },
     {
       "ordre": 5,
       "titre": "Chambre du haut",
-      "photo": "/gite-sologne/images/chambre-haut2.jpg"
+      "photo": "/images/chambre-haut2.jpg"
     },
     {
       "ordre": 10,
-      "photo": "/gite-sologne/images/chambre-haut4.jpg",
+      "photo": "/images/chambre-haut4.jpg",
       "titre": "Chambre du haut"
     },
     {
       "ordre": 11,
-      "photo": "/gite-sologne/images/sdb-haut2.jpg",
+      "photo": "/images/sdb-haut2.jpg",
       "titre": "Sale de bain (chambre du haut)"
     },
     {
       "ordre": 12,
-      "photo": "/gite-sologne/images/entrée.jpg",
+      "photo": "/images/entrée.jpg",
       "titre": "Entrée"
     }
   ],
   "exterieur": [
     {
       "ordre": 1,
-      "photo": "/gite-sologne/images/ext.11.jpeg",
+      "photo": "/images/ext.11.jpeg",
       "titre": "Entrée"
     },
     {
       "ordre": 2,
-      "photo": "/gite-sologne/images/terrasse4.jpg",
+      "photo": "/images/terrasse4.jpg",
       "titre": "Terrasse"
     },
     {
       "ordre": 3,
-      "photo": "/gite-sologne/images/terrasse1.jpg",
+      "photo": "/images/terrasse1.jpg",
       "titre": "Terrasse"
     },
     {
       "ordre": 4,
-      "photo": "/gite-sologne/images/ext.12.jpg",
+      "photo": "/images/ext.12.jpg",
       "titre": "Etang"
     },
     {
       "ordre": 5,
-      "photo": "/gite-sologne/images/ext.4.jpg",
+      "photo": "/images/ext.4.jpg",
       "titre": "Forêt"
     },
     {
       "ordre": 6,
       "titre": "Etang de pêche",
-      "photo": "/gite-sologne/images/img_7116.jpeg"
+      "photo": "/images/img_7116.jpeg"
     }
   ]
 }
