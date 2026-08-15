@@ -10,9 +10,9 @@
       "detail": " A71 → sortie Lamotte-Beuvron en venant du sud ou sortie Orleans-Sud en venant du Nord.\nTours : 1h00 · \nOrléans : 25 min"
     },
     {
-      "icone": "...",
+      "icone": "🚂",
       "label": "Train",
-      "detail": "Gares les plus proches :\n-"
+      "detail": "Gares les plus proches :\n- La Ferté saint Aubin  (8 km - 10 min)\n- Beaugency (18 km - 20 min)\n- Orléans (22 km - 30 min)"
     }
   ]
 }
