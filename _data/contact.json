@@ -6,12 +6,12 @@
     {
       "icone": "📞",
       "titre": "Téléphone",
-      "texte": ""
+      "texte": "06.81.05.08.36"
     },
     {
       "icone": "✉️",
       "titre": "Email",
-      "texte": ""
+      "texte": "gite.lamoriniere@orange.fr"
     },
     {
       "icone": "🕐",
@@ -21,7 +21,7 @@
     {
       "icone": "📅",
       "titre": "Arrivée / Départ",
-      "texte": "À partir de 17h · Avant 11h"
+      "texte": "Arrivée à partir de 17h\nDépart avant 11h\nCes horaires sont indicatifs et peuvent être modifiés selon vos besoins."
     }
   ]
 }
