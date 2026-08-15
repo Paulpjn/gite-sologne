@@ -184,6 +184,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const md2html = (str) =>
     (str || '').split(/\n\n+/).map(p => `<p>${p.replace(/\n/g, '<br>')}</p>`).join('');
 
+  const parseMarkdown = (str) =>
+    window.marked ? window.marked.parse(str || '') : md2html(str);
+
   /* ---- FONCTIONS D'APPLICATION ---- */
 
   function applyGeneral(d) {
@@ -383,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!d) return;
     setText('cms-activites-sous-titre', d.sous_titre);
     setText('cms-activites-titre', d.titre);
-    setText('cms-activites-description', d.description);
+    if (d.description) setHTML('cms-activites-description', parseMarkdown(d.description));
     const grid = el('cms-activites-grid');
     if (!grid || !Array.isArray(d.activites) || !d.activites.length) return;
     const delays = ['', 'fade-in-delay-1', 'fade-in-delay-2'];
@@ -396,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="activite-body">
           <span class="activite-icon">${a.icone || ''}</span>
           <h3>${a.titre || ''}</h3>
-          <p>${a.description || ''}</p>
+          <div class="activite-desc">${parseMarkdown(a.description)}</div>
         </div>
       </article>`;
     }).join('');

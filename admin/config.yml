@@ -82,7 +82,7 @@ collections:
         fields:
           - { label: "Sous-titre", name: "sous_titre", widget: "string" }
           - { label: "Titre de section", name: "titre", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Description", name: "description", widget: "markdown" }
           - label: "Liste des activités"
             name: "activites"
             widget: "list"
@@ -105,7 +105,7 @@ collections:
                   - { label: "🎨 Culture", value: "🎨" }
                   - { label: "⛳ Golf", value: "⛳" }
               - { label: "Titre", name: "titre", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Description", name: "description", widget: "markdown" }
               - { label: "Photo", name: "photo", widget: "image", required: false }
 
       - name: "localisation"

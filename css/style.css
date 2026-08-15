@@ -806,10 +806,31 @@ table.tarifs-table {
   margin-bottom: 0.4rem;
 }
 
-.activite-body p {
+.activite-body p,
+.activite-desc p {
   font-size: 0.88rem;
   color: var(--texte-clair);
   margin: 0;
+}
+
+.activite-desc p + p {
+  margin-top: 0.6rem;
+}
+
+.activite-desc ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.88rem;
+  color: var(--texte-clair);
+}
+
+.activite-desc li {
+  margin-bottom: 0.2rem;
+}
+
+.activite-desc a {
+  color: var(--vert-foret);
+  text-decoration: underline;
 }
 
 /* ---------- SECTION PROPRIÉTAIRES ---------- */
