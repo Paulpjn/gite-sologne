@@ -29,6 +29,36 @@
       "ordre": 6,
       "titre": "Chambre du bas",
       "photo": "/gite-sologne/images/chambre-bas2.jpg"
+    },
+    {
+      "ordre": 7,
+      "titre": "Sale de bain (chambre du bas)",
+      "photo": "/gite-sologne/images/sdb-bas2.jpg"
+    },
+    {
+      "ordre": 8,
+      "photo": "/gite-sologne/images/chambre-haut1.jpg",
+      "titre": "Chambre du haut"
+    },
+    {
+      "ordre": 5,
+      "titre": "Chambre du haut",
+      "photo": "/gite-sologne/images/chambre-haut2.jpg"
+    },
+    {
+      "ordre": 10,
+      "photo": "/gite-sologne/images/chambre-haut4.jpg",
+      "titre": "Chambre du haut"
+    },
+    {
+      "ordre": 11,
+      "photo": "/gite-sologne/images/sdb-haut2.jpg",
+      "titre": "Sale de bain (chambre du haut)"
+    },
+    {
+      "ordre": 12,
+      "photo": "/gite-sologne/images/entrée.jpg",
+      "titre": "Entrée"
     }
   ],
   "exterieur": [
