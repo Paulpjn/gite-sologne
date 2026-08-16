@@ -1,5 +1,5 @@
 const CORS_HEADERS = {
-  'Access-Control-Allow-Origin': 'https://paulpjn.github.io',
+  'Access-Control-Allow-Origin': 'https://gite-lamoriniere.fr',
   'Access-Control-Allow-Methods': 'GET, OPTIONS',
   'Access-Control-Max-Age': '86400',
 };
