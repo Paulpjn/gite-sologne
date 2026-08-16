@@ -65,7 +65,7 @@
     {
       "ordre": 1,
       "photo": "/images/ext.11.jpeg",
-      "titre": "Entrée"
+      "titre": "Entrée privative"
     },
     {
       "ordre": 2,
@@ -83,12 +83,12 @@
       "titre": "Etang"
     },
     {
-      "ordre": 5,
+      "ordre": 6,
       "photo": "/images/ext.4.jpg",
       "titre": "Forêt"
     },
     {
-      "ordre": 6,
+      "ordre": 5,
       "titre": "Etang de pêche",
       "photo": "/images/img_7116.jpeg"
     }
