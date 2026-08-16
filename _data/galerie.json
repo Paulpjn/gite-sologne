@@ -32,31 +32,26 @@
     },
     {
       "ordre": 7,
-      "titre": "Sale de bain (chambre du bas)",
+      "titre": "Salle de bain (chambre du bas)",
       "photo": "/images/sdb-bas2.jpg"
     },
     {
-      "ordre": 8,
-      "photo": "/images/chambre-haut1.jpg",
-      "titre": "Chambre du haut"
-    },
-    {
-      "ordre": 5,
+      "ordre": 9,
       "titre": "Chambre du haut",
       "photo": "/images/chambre-haut2.jpg"
     },
     {
-      "ordre": 10,
+      "ordre": 8,
       "photo": "/images/chambre-haut4.jpg",
       "titre": "Chambre du haut"
     },
     {
-      "ordre": 11,
+      "ordre": 10,
       "photo": "/images/sdb-haut2.jpg",
-      "titre": "Sale de bain (chambre du haut)"
+      "titre": "Salle de bain (chambre du haut)"
     },
     {
-      "ordre": 12,
+      "ordre": 11,
       "photo": "/images/entrée.jpg",
       "titre": "Entrée"
     }
@@ -83,12 +78,12 @@
       "titre": "Etang"
     },
     {
-      "ordre": 5,
+      "ordre": 6,
       "photo": "/images/ext.4.jpg",
       "titre": "Forêt"
     },
     {
-      "ordre": 6,
+      "ordre": 5,
       "titre": "Etang de pêche",
       "photo": "/images/img_7116.jpeg"
     },
