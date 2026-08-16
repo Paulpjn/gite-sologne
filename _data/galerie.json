@@ -83,14 +83,19 @@
       "titre": "Etang"
     },
     {
-      "ordre": 6,
+      "ordre": 5,
       "photo": "/images/ext.4.jpg",
       "titre": "Forêt"
     },
     {
-      "ordre": 5,
+      "ordre": 6,
       "titre": "Etang de pêche",
       "photo": "/images/img_7116.jpeg"
+    },
+    {
+      "ordre": 7,
+      "titre": "Allée",
+      "photo": "/images/img_6348.jpeg"
     }
   ]
 }
